@@ -1,4 +1,4 @@
-Grading at Sat Aug 25 20:37:47 UTC 2018
+Grading at Sat Aug 25 20:41:26 UTC 2018
 Checking code1.c for legal syntax
 Checking for int max (int num1, int num2)
 Found on line 3, column 1 
@@ -11,6 +11,6 @@ Here is what you printed
 max(42, -69) is 42
 max(33, 0) is 33
 max(0x123456, 123456) is 1193046
-max(0x45121AF, 0x913591AF is 1158813103
+max(0x45121AF, 0x913591AF) is 1158813103
 
 Overall Grade: F
