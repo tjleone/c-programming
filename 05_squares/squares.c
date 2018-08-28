@@ -1,6 +1,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+int max(int n1, n2) {
+  if (n1 > n2) {
+    return n1;
+  }
+  return n2;
+}
 
 void squares(int size1, int x_offset, int y_offset, int size2) {
   //compute the max of size1 and (x_offset + size2).  Call this w
