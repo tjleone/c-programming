@@ -22,6 +22,9 @@ file.write('1234 12345\n')
 file.write('12345\n')
 file.write(' 12345\n')
 file.write('\n')
+file.write('12345\t12345\n')
+file.write('\t \t\n')
+file.write('12345 54321')
 unprintable = ''
 for i in range(5):
     unprintable += chr(i)
