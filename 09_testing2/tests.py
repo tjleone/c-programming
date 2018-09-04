@@ -37,6 +37,7 @@ file.write('11355 55311\n')
 file.write('11145 12555\n')
 file.write('~!@#$ %^&*(\n')
 file.write('`,./" ' "-=[]\\\n")
+file.write('Aabcd AAbcd\n')
 unprintable = ''
 for i in range(5):
     unprintable += chr(i)
