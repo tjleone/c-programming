@@ -24,11 +24,16 @@ file.write(' 12345\n')
 file.write('\n')
 file.write('12345\t12345\n')
 file.write('\t \t\n')
-file.write('12345 54321')
+file.write('12345 54321\n')
+file.write('11345 54311\n')
+file.write('12245 54221\n')
+file.write('11355 55311\n')
+file.write('11145 12555\n')
 unprintable = ''
 for i in range(5):
     unprintable += chr(i)
 file.write(unprintable + ' 12345\n')
+file.write(' ' + unprintable + '\n')
 file.write(unprintable + '\n')
 
 for i in range(27):
