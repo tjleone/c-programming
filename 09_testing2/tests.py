@@ -17,6 +17,8 @@ def toStr(n, base):
 file = open('tests.txt', 'w')
 file.write('12345 12345\n')
 file.write('12345 123456\n')
+file.write('12345 123455\n')
+file.write('12345 523456\n')
 file.write('123456 123456\n')
 file.write('123456 12345\n')
 file.write('12345 1234\n')
