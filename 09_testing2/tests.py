@@ -21,6 +21,11 @@ file.write('12345 1234\n')
 file.write('1234 12345\n')
 file.write('12345\n')
 file.write('\n')
+unprintable = ''
+for i in range(5):
+    unprintable += chr(i)
+file.write(unprintable + ' 12345\n')
+file.write(unprintable + '\n')
 
 for i in range(27):
     for j in range(27):
