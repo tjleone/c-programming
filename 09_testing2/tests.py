@@ -19,6 +19,8 @@ file.write('12345 123456\n')
 file.write('123456 12345\n')
 file.write('12345 1234\n')
 file.write('1234 12345\n')
+file.write('12345\n')
+file.write('\n')
 
 for i in range(27):
     for j in range(27):
