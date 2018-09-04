@@ -15,6 +15,7 @@ def toStr(n, base):
         return toStr(n/base, base) + convertString[n%base]
     
 file = open('tests.txt', 'w')
+file.write('12345 12345\n')
 file.write('12345 123456\n')
 file.write('123456 12345\n')
 file.write('12345 1234\n')
@@ -29,6 +30,7 @@ file.write('11345 54311\n')
 file.write('12245 54221\n')
 file.write('11355 55311\n')
 file.write('11145 12555\n')
+file.write('~!@#$ %^&*(\n')
 unprintable = ''
 for i in range(5):
     unprintable += chr(i)
