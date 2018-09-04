@@ -35,6 +35,10 @@ for i in range(27):
     for j in range(27):
         file.write(toFstr(i,3,4) + '0 ' + toFstr(j,3,4) + '0\n')
         
+for i in range(27):
+    for j in range(27):
+        file.write(toFstr(i,3,4) + '0 1' + toFstr(j,3,3) + '0\n')
+        
 for i in range(32):
     for j in range(32):
         file.write(f'{i:05b} {j:05b}\n')
