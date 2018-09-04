@@ -20,6 +20,7 @@ file.write('123456 12345\n')
 file.write('12345 1234\n')
 file.write('1234 12345\n')
 file.write('12345\n')
+file.write(' 12345\n')
 file.write('\n')
 unprintable = ''
 for i in range(5):
