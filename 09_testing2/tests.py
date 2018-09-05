@@ -10,12 +10,12 @@ hands = ['', '0', '1',
     
 file = open('tests.txt', 'w')
 file.write('\n')
-file.write('01234 01234 00000')
-file.write('00000 01234 01234')
-file.write('01234 01234 00000')
+file.write('01234 01234 00000\n')
+file.write('00000 01234 01234\n')
+file.write('01234 01234 00000\n')
 
 for i in range(len(hands)):
     for j in range(len(hands)):
-        file.write(hands[i] + ' ' + hands[j])
+        file.write(hands[i] + ' ' + hands[j] + '\n')
 
 file.close()
