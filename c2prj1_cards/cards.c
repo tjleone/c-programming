@@ -42,9 +42,9 @@ const char * ranking_to_string(hand_ranking_t r) {
   case STRAIGHT:
     return "STRAIGHT";
   case THREE_OF_A_KIND:
-    return "THREE";
+    return "THREE_OF_A_KIND";
   case TWO_PAIR:
-    return "TWO";
+    return "TWO_PAIR";
   case PAIR:
     return "PAIR";
   case NOTHING:
