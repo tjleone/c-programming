@@ -5,23 +5,33 @@
 #include <string.h>
 #include "cards.h"
 
+void test_assert(bool cond);
+
+//#define ASSERT(cond) test_assert(cond);
+#define ASSERT(cond) assert((cond));
+
 const char suit_letters[NUM_SUITS] = "shdc";
-const char value_letters[13] = "234567890JQKA";
+
+void test_assert(bool cond) {
+  if (!(cond)) {
+    printf("ASSERTION FAILED\n");
+  }
+}
 
 void assert_value_valid(unsigned value) {
-  assert(value >=2 && value <= VALUE_ACE);
+  ASSERT(value >=2 && value <= VALUE_ACE);
 }
 
 void assert_suit_valid(suit_t suit) {
-  assert(suit >= SPADES && suit <= CLUBS);
+  ASSERT(suit >= SPADES && suit <= CLUBS);
 }
 
 void assert_value_letter_valid(char value_letter) {
-  assert(strchr(value_letters, value_letter));
+  ASSERT(strchr("234567890JQKA", value_letter));
 }
 
 void assert_suit_letter_valid(char suit_letter) {
-  assert(strchr(suit_letters, suit_letter));
+  ASSERT(strchr("shdc", suit_letter));
 }
 
 void assert_card_valid(card_t c) {
@@ -143,7 +153,7 @@ card_t card_from_letters(char value_let, char suit_let) {
 }
 
 card_t card_from_num(unsigned c) {
-  assert(c >= 0 && c < 52);
+  ASSERT(c >= 0 && c < 52);
   card_t temp;
   temp.value = c % 13 + 2;
   temp.suit = c / 13;
