@@ -22,6 +22,9 @@
     You can compile your code and link it with this object file
     to make a program:
        gcc -o squares -Wall -Werror -std=gnu99 --pedantic squares.c squares_test.o
+    In Ubuntu, you'll want to add -no-pie so you don't try to make a PIE object:
+       gcc -o squares -Wall -Werror -std=gnu99 --pedantic squares.c squares_test.o -no-pie
+    For more info, see https://codywu2010.wordpress.com/2014/11/29/about-elf-pie-pic-and-else/
     Then you can run it like this:
       ./square 4 1  2 3
     which would call your squares function with
