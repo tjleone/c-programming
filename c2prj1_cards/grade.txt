@@ -1,0 +1,62 @@
+Grading at Thu Sep 13 13:15:18 UTC 2018
+Compiling cards.c
+Testing card_from_letters
+Passed
+Testing value_letter and suit_letter
+Passed
+Testing print_card
+Your print_card does not work the way I expect:
+sK
+hK
+dK
+cK
+sA
+hA
+dA
+cA
+s2
+h2
+d2
+c2
+s3
+h3
+d3
+c3
+s4
+h4
+d4
+c4
+s5
+h5
+d5
+c5
+s6
+h6
+d6
+c6
+s7
+h7
+d7
+c7
+s8
+h8
+d8
+c8
+s9
+h9
+d9
+c9
+s0
+h0
+d0
+c0
+sJ
+hJ
+dJ
+cJ
+sQ
+hQ
+dQ
+cQ
+
+Overall Grade: FAILED
