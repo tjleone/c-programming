@@ -1,0 +1,116 @@
+Grading at Sat Sep 22 18:29:51 UTC 2018
+**Testing broken implementation 10 **
+-------------------------------------
+
+For array 0, expected 0, got 0
+For array 1, expected 1, got 1
+For array 2, expected 1, got 1
+For array 3, expected 2, got 2
+For array 4, expected 2, got 2
+For array 5, expected 1, got 1
+For array 6, expected 3, got 3
+For array 7, expected 2, got 2
+For array 8, expected 2, got 2
+For array 9, expected 2, got 2
+For array 10, expected 2, got 2
+For array 11, expected 1, got 1
+For array 12, expected 2, got 2
+For array 13, expected 1, got 1
+For array 14, expected 1, got 2
+
+**Testing broken implementation 11 **
+-------------------------------------
+
+For array 0, expected 0, got 0
+For array 1, expected 1, got 2
+
+**Testing broken implementation 1 **
+-------------------------------------
+
+For array 0, expected 0, got 0
+For array 1, expected 1, got 1
+For array 2, expected 1, got 3
+
+**Testing broken implementation 2 **
+-------------------------------------
+
+For array 0, expected 0, got 1
+
+**Testing broken implementation 3 **
+-------------------------------------
+
+For array 0, expected 0, got 0
+For array 1, expected 1, got 1
+For array 2, expected 1, got 1
+For array 3, expected 2, got 2
+For array 4, expected 2, got 2
+For array 5, expected 1, got 1
+For array 6, expected 3, got 3
+For array 7, expected 2, got 2
+For array 8, expected 2, got 2
+For array 9, expected 2, got 2
+For array 10, expected 2, got 3
+
+**Testing broken implementation 4 **
+-------------------------------------
+
+For array 0, expected 0, got 1
+
+**Testing broken implementation 5 **
+-------------------------------------
+
+For array 0, expected 0, got 0
+For array 1, expected 1, got 1
+For array 2, expected 1, got 1
+For array 3, expected 2, got 3
+
+**Testing broken implementation 6 **
+-------------------------------------
+
+For array 0, expected 0, got 0
+For array 1, expected 1, got 0
+
+**Testing broken implementation 7 **
+-------------------------------------
+
+For array 0, expected 0, got 0
+For array 1, expected 1, got 0
+
+**Testing broken implementation 8 **
+-------------------------------------
+
+For array 0, expected 0, got 0
+For array 1, expected 1, got 1
+For array 2, expected 1, got 1
+For array 3, expected 2, got 1
+
+**Testing broken implementation 9 **
+-------------------------------------
+
+For array 0, expected 0, got 0
+For array 1, expected 1, got 1
+For array 2, expected 1, got 1
+For array 3, expected 2, got 1
+
+**Testing correct implementation **
+-------------------------------------
+
+For array 0, expected 0, got 0
+For array 1, expected 1, got 1
+For array 2, expected 1, got 1
+For array 3, expected 2, got 2
+For array 4, expected 2, got 2
+For array 5, expected 1, got 1
+For array 6, expected 3, got 3
+For array 7, expected 2, got 2
+For array 8, expected 2, got 2
+For array 9, expected 2, got 2
+For array 10, expected 2, got 2
+For array 11, expected 1, got 1
+For array 12, expected 2, got 2
+For array 13, expected 1, got 1
+For array 14, expected 1, got 1
+
+All test programs were handled correctly
+
+Overall Grade: PASSED
