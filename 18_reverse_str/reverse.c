@@ -26,10 +26,8 @@ void reverse(char * str) {
   }
 
   char copy[n];
-  printf("n=%ld, str=%s\n", n, str);
   strncpy(copy, str, n);
   copy[n] = '\0';
-  printf("copy=%s\n",copy);
   strnbcpy(str, copy, n);    
 }
 
@@ -43,7 +41,6 @@ int main(void) {
   char str6[] = "Executor Selendis! Unleash the full power of your forces! There may be no tomorrow!";
   char * array[] = {str0, str1, str2, str3, str4, str5, str6};
   for (int i = 0; i < 7; i++) {
-    printf("array[%d]=%s\n",i, array[i]);
     reverse(array[i]);
     printf("%s\n", array[i]);
   }
