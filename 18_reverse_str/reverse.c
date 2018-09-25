@@ -6,8 +6,9 @@ const size_t MAX_SIZE = 100;
 char * strnbcpy(char *dest, const char *src, size_t n);
 void reverse(char * str);
 
-// n is the index of the '\0' in src or MAX_SIZE
-// dest must have a size of n
+/* n is the index of the '\0' in src or MAX_SIZE
+   dest must have a size of n
+*/
 char * strnbcpy(char *dest, const char *src, size_t n) {
   size_t i;
 
