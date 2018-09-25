@@ -3,7 +3,23 @@
 #include <string.h>
 
 void reverse(char * str) {
-  //WRITE ME!
+  if(*str == '\0') {
+    return;
+  }
+  int n = 0;
+  while (str[n] != 0) {
+    n++;
+  }
+  char copy[n];
+  char *p = strncpy(copy, str, n);
+  copy[n] = '\0';
+  p = &copy[n-1];
+
+  for(char *q = str; p >= copy; p--, q++) {
+    *q = *p;
+  }
+
+    
 }
 
 int main(void) {
