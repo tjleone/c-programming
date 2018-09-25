@@ -21,12 +21,13 @@ char * strnbcpy(char *dest, const char *src, size_t n) {
 
 
 void reverse(char * str) {
-  size_t n = strnlen(str, MAX_SIZE);
-  if(n == 0) {
+  if (str == NULL || *str == '\0') {
     return;
   }
+  size_t n = strnlen(str, MAX_SIZE);
 
-  char copy[n];
+  char copy[MAX_SIZE];
+  if (n == MAX_SIZE) n--;
   strncpy(copy, str, n);
   copy[n] = '\0';
   strnbcpy(str, copy, n);    
