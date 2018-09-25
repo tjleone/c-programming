@@ -1,7 +1,26 @@
-Grading at Tue Sep 25 15:45:12 UTC 2018
+Grading at Tue Sep 25 19:13:23 UTC 2018
 Attempting to compile  reverse.c
-Your file matched the expected output
-Your output matched what we expected
+Line_1_did_not_match
+Line_3_did_not_match
+Line_4_did_not_match
+Line_5_did_not_match
+Line_7_did_not_match
+Line_8_did_not_match
+Line_9_did_not_match
+Line_11_did_not_match
+Line_12_did_not_match
+Line_13_did_not_match
+Line_15_did_not_match
+Line_16_did_not_match
+Line_17_did_not_match
+Line_19_did_not_match
+Line_20_did_not_match
+Line_21_did_not_match
+Line_23_did_not_match
+Line_24_did_not_match
+Line_25_did_not_match
+Your file did not match the expected ouput
+Your output did not match what we expected.
 Removing your main() and replacing it with our own to run more tests...
 #################################################
 testcase2:
@@ -9,12 +28,21 @@ testcase2:
 your code failed the testcase
 #################################################
 testcase3:
-Your file matched the expected output
+Line_1_did_not_match
+Line_2_did_not_match
+Your file did not match the expected ouput
+your code failed the testcase
 #################################################
 testcase4:
-Your file matched the expected output
+Line_1_did_not_match
+Line_2_did_not_match
+Your file did not match the expected ouput
+your code failed the testcase
 #################################################
 testcase5:
-Your file matched the expected output
+Line_1_did_not_match
+Line_2_did_not_match
+Your file did not match the expected ouput
+your code failed the testcase
 
-Overall Grade: C
+Overall Grade: F
