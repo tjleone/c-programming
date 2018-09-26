@@ -1,5 +1,0 @@
-#include <stdio.h>
-#include <stdlib.h>
-
-void rotate(char matrix[10][10]) {
-}

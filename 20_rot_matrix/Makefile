@@ -1,11 +1,11 @@
 CC = gcc
 CFLAGS = -pedantic -std=gnu99 -ggdb3 -Wall -Werror -no-pie
 
-rotate-matrix: read-matrix.o rotate-matrix.o
-	$(CC) $(CFLAGS) -o rotate-matrix read-matrix.o rotate-matrix.o
+rotate-matrix: read-matrix.o rotate.o
+	$(CC) $(CFLAGS) -o rotate-matrix read-matrix.o rotate.o
 
-rotate-matrix.o: rotate-matrix.c
-	$(CC) $(CFLAGS) -c rotate-matrix.c
+rotate.o: rotate.c
+	$(CC) $(CFLAGS) -c rotate.c
 
 .PHONY: run clean
 
@@ -13,4 +13,4 @@ run:
 	./rotate-matrix
 
 clean:
-	rm rotate-matrix *.o *~
+	rm rotate-matrix rotate.o *~
