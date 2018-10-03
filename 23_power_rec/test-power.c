@@ -10,7 +10,7 @@ int main(void) {
     unsigned expected;
   } param_t;
 
-  size_t s_params = 7;
+  size_t s_params = 9;
 
   param_t params[] = { {.x = 0, .y = 0, .expected = 1},
 		       {.x = 1, .y = -1, .expected = 1},
@@ -18,7 +18,9 @@ int main(void) {
 		       {.x = -2, .y = 2, .expected = 4},
 		       {.x = -2, .y = 3, .expected = -8},
 		       {.x = 0, .y = -1, .expected = 0}, // answer from "correct" implementation
-		       {.x = -1, .y = -1, .expected = -1} // answer from "correct" implementation
+		       {.x = -1, .y = -1, .expected = -1}, // answer from "correct" implementation
+		       {.x = 2, .y = -1, .expected = 0}, // answer from "correct" implementation
+		       {.x = -2, .y = -1, .expected = 0} // answer from "correct" implementation
   };
 
   for (int i=0; i<s_params; i++) {
