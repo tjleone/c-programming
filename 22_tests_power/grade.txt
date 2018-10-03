@@ -1,0 +1,99 @@
+Grading at Wed Oct  3 14:25:30 UTC 2018
+**Testing broken implementation 10 **
+-------------------------------------
+
+For x=0, y=0, expected 1, got 1
+For x=1, y=-1, expected 1, got 1
+For x=-2, y=0, expected 1, got 1
+For x=-2, y=2, expected 4, got -2
+
+**Testing broken implementation 11 **
+-------------------------------------
+
+For x=0, y=0, expected 1, got 1
+For x=1, y=-1, expected 1, got 1
+For x=-2, y=0, expected 1, got 1
+For x=-2, y=2, expected 4, got 36
+
+**Testing broken implementation 1 **
+-------------------------------------
+
+For x=0, y=0, expected 1, got 1
+For x=1, y=-1, expected 1, got 1
+For x=-2, y=0, expected 1, got 1
+For x=-2, y=2, expected 4, got 1
+
+**Testing broken implementation 2 **
+-------------------------------------
+
+
+**Testing broken implementation 3 **
+-------------------------------------
+
+For x=0, y=0, expected 1, got 0
+
+**Testing broken implementation 4 **
+-------------------------------------
+
+For x=0, y=0, expected 1, got 1
+For x=1, y=-1, expected 1, got 1
+For x=-2, y=0, expected 1, got 1
+For x=-2, y=2, expected 4, got 4
+For x=-2, y=3, expected -8, got 65528
+
+**Testing broken implementation 5 **
+-------------------------------------
+
+For x=0, y=0, expected 1, got 1
+For x=1, y=-1, expected 1, got 1
+For x=-2, y=0, expected 1, got 1
+For x=-2, y=2, expected 4, got 6
+
+**Testing broken implementation 6 **
+-------------------------------------
+
+For x=0, y=0, expected 1, got 1
+For x=1, y=-1, expected 1, got 1
+For x=-2, y=0, expected 1, got 1
+For x=-2, y=2, expected 4, got 4
+For x=-2, y=3, expected -8, got 8
+
+**Testing broken implementation 7 **
+-------------------------------------
+
+For x=0, y=0, expected 1, got 1
+For x=1, y=-1, expected 1, got 1
+For x=-2, y=0, expected 1, got 1
+For x=-2, y=2, expected 4, got 9
+
+**Testing broken implementation 8 **
+-------------------------------------
+
+For x=0, y=0, expected 1, got 1
+For x=1, y=-1, expected 1, got 1
+For x=-2, y=0, expected 1, got 1
+For x=-2, y=2, expected 4, got -4
+
+**Testing broken implementation 9 **
+-------------------------------------
+
+For x=0, y=0, expected 1, got 1
+For x=1, y=-1, expected 1, got 1
+For x=-2, y=0, expected 1, got 1
+For x=-2, y=2, expected 4, got -2
+
+**Testing correct implementation **
+-------------------------------------
+
+For x=0, y=0, expected 1, got 1
+For x=1, y=-1, expected 1, got 1
+For x=-2, y=0, expected 1, got 1
+For x=-2, y=2, expected 4, got 4
+For x=-2, y=3, expected -8, got -8
+For x=0, y=-1, expected 0, got 0
+For x=-1, y=-1, expected -1, got -1
+
+All tests were ok.
+
+
+Overall Grade: PASSED
