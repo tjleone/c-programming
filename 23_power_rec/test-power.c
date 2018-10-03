@@ -19,8 +19,13 @@ int main(void) {
 		       {.x = -2, .y = 3, .expected = -8},
 		       {.x = 0, .y = -1, .expected = 0}, // answer from "correct" implementation
 		       {.x = -1, .y = -1, .expected = -1}, // answer from "correct" implementation
+<<<<<<< HEAD
 		       {.x = 2, .y = -1, .expected = 0}, // answer from "correct" implementation
 		       {.x = -2, .y = -1, .expected = 0} // answer from "correct" implementation
+=======
+		       {.x = 2, .y = 1, .expected = 0}, // answer from "correct" implementation
+		       {.x = 2, .y = -1, .expected = 0} // answer from "correct" implementation
+>>>>>>> 7efced044f515c9ca5dfe6d5785a2951aabfa524
   };
 
   for (int i=0; i<s_params; i++) {
