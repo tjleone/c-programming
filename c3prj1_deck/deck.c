@@ -3,6 +3,7 @@
 #include <stdbool.h>
 #include <assert.h>
 #include "deck.h"
+#include "cards.h"
 
 const int FULL_DECK_SIZE = 52;
 
