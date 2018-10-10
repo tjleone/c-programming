@@ -1,19 +1,14 @@
-Grading at Wed Oct 10 12:44:49 UTC 2018
+Grading at Wed Oct 10 17:47:24 UTC 2018
 Compiling deck.c
-deck.c: In function ‘deck_contains’:
-deck.c:30:8: error: implicit declaration of function ‘compare_cards’ [-Werror=implicit-function-declaration]
-     if(compare_cards(&deck_card_ptr, &target_card_ptr) == 0) {
-        ^
-deck.c: In function ‘shuffle’:
-deck.c:39:5: error: implicit declaration of function ‘swap_cards’ [-Werror=implicit-function-declaration]
-     swap_cards(d->cards[i], d->cards[rand() % d->n_cards]);
-     ^
-deck.c: In function ‘sort_cards’:
-deck.c:52:49: error: ‘compare_cards’ undeclared (first use in this function)
-   qsort(array, nelements, sizeof(const char *), compare_cards);
-                                                 ^
-deck.c:52:49: note: each undeclared identifier is reported only once for each function it appears in
-cc1: all warnings being treated as errors
-Could not compile your deck.c!
+Compiling cards.c
+Linking cards.o deck.o deck-c4.o and the grader's .o file
+Checking the output of all the functions other than shuffle
+Your file matched the expected output
+ - Those functions seem to work!
+Checking your shuffle results with a 6 card hand...
+  Least common hand: 0.131800%
+  Most  common hand: 0.146250%
+  Perfectly even is: 0.138888%
+ Excellent!
 
-Overall Grade: FAILED
+Overall Grade: A
