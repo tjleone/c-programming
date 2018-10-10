@@ -3,7 +3,6 @@
 #include <stdbool.h>
 #include <assert.h>
 #include "deck.h"
-#include "cards.h"
 
 const int FULL_DECK_SIZE = 52;
 
@@ -49,6 +48,6 @@ void assert_full_deck(deck_t * d) {
   }
 }
 
-void sort_cards(const char ** array, size_t nelements) {
-  qsort(array, nelements, sizeof(const char *), compare_cards);
+void sort_cards(const card_t ** array, size_t nelements) {
+  qsort(array, nelements, sizeof(const card_t *), compare_cards);
 }

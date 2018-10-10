@@ -14,7 +14,7 @@ void shuffle(deck_t * d);
 void assert_full_deck(deck_t * d) ;
 
 // added by TJ Leone
-void sort_cards(const char ** array, size_t nelements);
+void sort_cards(const card_t ** array, size_t nelements);
 
 //The below functions will be done in course 4.
 deck_t * make_deck_exclude(deck_t * excluded_cards);
