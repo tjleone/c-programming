@@ -1,0 +1,14 @@
+CFLAGS=-ggdb3 -Wall -Werror -pedantic -std=gnu99 -Wwrite-strings
+GIVEN_OBJS=deck-c4.o  eval-c4.o  future.o  input.o
+MY_OBJS=cards.o deck.o eval.o test.o
+
+test: $(GIVEN_OBJS) $(MY_OBJS)
+	gcc -o test -no-pie -ggdb3  $(MY_OBJS) $(GIVEN_OBJS)
+
+.PHONY: run clean
+
+run:
+	./test
+
+clean:
+	rm test poker cards.o deck.o eval.o test.o *~

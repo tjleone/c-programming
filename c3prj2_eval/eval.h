@@ -13,4 +13,7 @@ int card_ptr_comp(const void * vp1, const void * vp2) ;
 
 // added by TJ Leone
 void sort_hand(deck_t * hand);
+
+// added for testing
+int is_straight_at(deck_t * hand, size_t index, suit_t fs);
 #endif
