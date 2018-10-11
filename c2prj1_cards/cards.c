@@ -155,7 +155,7 @@ unsigned num_from_card_ptr(const card_t *c) {
   return c->suit * 13 + c->value - 2;
 }
 
-int compare_cards(const void *c1vp, const void *c2vp) {
+int compare_cards_by_num(const void *c1vp, const void *c2vp) {
   const card_t * const *c1ptr = c1vp;
   const card_t * const *c2ptr = c2vp;
   return num_from_card_ptr(*c1ptr) - num_from_card_ptr(*c2ptr);

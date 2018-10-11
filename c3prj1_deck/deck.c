@@ -3,6 +3,7 @@
 #include <stdbool.h>
 #include <assert.h>
 #include "deck.h"
+#include "eval.h"
 
 const int FULL_DECK_SIZE = 52;
 
@@ -27,7 +28,7 @@ int deck_contains(deck_t * d, card_t c) {
   for(int i=0; i<d->n_cards; i++) {
     const card_t * deck_card_ptr = d->cards[i];
     const card_t * target_card_ptr = &c;
-    if(compare_cards(&deck_card_ptr, &target_card_ptr) == 0) {
+    if(card_ptr_comp(&deck_card_ptr, &target_card_ptr) == 0) {
       return 1;
     }
   }
@@ -48,6 +49,6 @@ void assert_full_deck(deck_t * d) {
   }
 }
 
-void sort_cards(const card_t ** array, size_t nelements) {
-  qsort(array, nelements, sizeof(const card_t *), compare_cards);
+void sort_cards(card_t ** array, size_t nelements) {
+  qsort(array, nelements, sizeof(const card_t *), card_ptr_comp);
 }
