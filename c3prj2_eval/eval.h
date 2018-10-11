@@ -9,5 +9,8 @@ typedef struct hand_eval_tag hand_eval_t;
 
 hand_eval_t evaluate_hand(deck_t * hand) ;
 int compare_hands(deck_t * hand1, deck_t * hand2) ;
+int card_ptr_comp(const void * vp1, const void * vp2) ;
 
+// added by TJ Leone
+void sort_hand(deck_t * hand);
 #endif
