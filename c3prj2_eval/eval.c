@@ -91,6 +91,11 @@ ssize_t  find_secondary_pair(deck_t * hand,
 int is_n_length_straight_at(deck_t * hand, size_t index, suit_t fs, int n) {
   int num_in_a_row = 0;
   unsigned last_value = hand->cards[index]->value+1;
+
+  if(fs != NUM_SUITS && hand->cards[index]->suit != fs) {
+    return 0;
+  }
+
   for(int i=index; i<hand->n_cards; i++) {
     if(fs == NUM_SUITS) {
       if(hand->cards[i]->value != last_value) {
