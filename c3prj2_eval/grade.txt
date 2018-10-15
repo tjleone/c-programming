@@ -1,4 +1,4 @@
-Grading at Mon Oct 15 14:04:46 UTC 2018
+Grading at Mon Oct 15 20:17:39 UTC 2018
 Compiling your code
 rm test poker cards.o my-test-main.o *~
 Makefile:10: recipe for target 'clean' failed
@@ -38,129 +38,11 @@ Your file matched the expected output
  - Testcase passed
 Testcase 9: Trying hands with straight flushes
  Checking the output 
-Line_53_did_not_match
-Your file did not match the expected ouput
- - Output did not match, testcase failed
-Hand 1:								Hand 1:
---------							--------
-As Ks Qs Js 0s 							As Ks Qs Js 0s 
- - Flush in suit s						 - Flush in suit s
- - Straight flush at index 0					 - Straight flush at index 0
- - The most of a kind is 1 of a kind (at index 0 / value A)	 - The most of a kind is 1 of a kind (at index 0 / value A)
- - No secondary pair						 - No secondary pair
- - evaluate_hand's ranking: STRAIGHT_FLUSH			 - evaluate_hand's ranking: STRAIGHT_FLUSH
- - 5 cards used for hand: As Ks Qs Js 0s 			 - 5 cards used for hand: As Ks Qs Js 0s 
-Hand 2:								Hand 2:
---------							--------
-Kh Qh Jh 0h 9h 							Kh Qh Jh 0h 9h 
- - Flush in suit h						 - Flush in suit h
- - Straight flush at index 0					 - Straight flush at index 0
- - The most of a kind is 1 of a kind (at index 0 / value K)	 - The most of a kind is 1 of a kind (at index 0 / value K)
- - No secondary pair						 - No secondary pair
- - evaluate_hand's ranking: STRAIGHT_FLUSH			 - evaluate_hand's ranking: STRAIGHT_FLUSH
- - 5 cards used for hand: Kh Qh Jh 0h 9h 			 - 5 cards used for hand: Kh Qh Jh 0h 9h 
-Comparison : 							Comparison : 
---------------							--------------
-Hand 1 wins!							Hand 1 wins!
-============================					============================
-Hand 1:								Hand 1:
---------							--------
-As Ks Qs Js 0s 9s 8s 						As Ks Qs Js 0s 9s 8s 
- - Flush in suit s						 - Flush in suit s
- - Straight flush at index 0					 - Straight flush at index 0
- - Straight flush at index 1					 - Straight flush at index 1
- - Straight flush at index 2					 - Straight flush at index 2
- - The most of a kind is 1 of a kind (at index 0 / value A)	 - The most of a kind is 1 of a kind (at index 0 / value A)
- - No secondary pair						 - No secondary pair
- - evaluate_hand's ranking: STRAIGHT_FLUSH			 - evaluate_hand's ranking: STRAIGHT_FLUSH
- - 5 cards used for hand: As Ks Qs Js 0s 			 - 5 cards used for hand: As Ks Qs Js 0s 
-Hand 2:								Hand 2:
---------							--------
-Kh Qh Jh 0h 9h 8h 7h 						Kh Qh Jh 0h 9h 8h 7h 
- - Flush in suit h						 - Flush in suit h
- - Straight flush at index 0					 - Straight flush at index 0
- - Straight flush at index 1					 - Straight flush at index 1
- - Straight flush at index 2					 - Straight flush at index 2
- - The most of a kind is 1 of a kind (at index 0 / value K)	 - The most of a kind is 1 of a kind (at index 0 / value K)
- - No secondary pair						 - No secondary pair
- - evaluate_hand's ranking: STRAIGHT_FLUSH			 - evaluate_hand's ranking: STRAIGHT_FLUSH
- - 5 cards used for hand: Kh Qh Jh 0h 9h 			 - 5 cards used for hand: Kh Qh Jh 0h 9h 
-Comparison : 							Comparison : 
---------------							--------------
-Hand 1 wins!							Hand 1 wins!
-============================					============================
-Hand 1:								Hand 1:
---------							--------
-Ac As Kc Ks Qs Js 0s 						Ac As Kc Ks Qs Js 0s 
- - Flush in suit s						 - Flush in suit s
- - Straight at index 0					      |	 - Straight flush at index 0
- - Straight flush at index 1					 - Straight flush at index 1
- - The most of a kind is 2 of a kind (at index 0 / value A)	 - The most of a kind is 2 of a kind (at index 0 / value A)
- - Secondary pair at index 2 (value K)				 - Secondary pair at index 2 (value K)
- - evaluate_hand's ranking: STRAIGHT_FLUSH		      <
- - 5 cards used for hand: As Ks Qs Js 0s 		      <
-Hand 2:							      <
---------						      <
-Ad Kh Qh Jh Js 0h 9h 					      <
- - Flush in suit h					      <
- - Straight at index 0					      <
- - Straight flush at index 1				      <
- - The most of a kind is 2 of a kind (at index 3 / value J)   <
- - No secondary pair					      <
- - evaluate_hand's ranking: STRAIGHT_FLUSH		      <
- - 5 cards used for hand: Kh Qh Jh 0h 9h 		      <
-Comparison : 						      <
---------------						      <
-Hand 1 wins!						      <
-============================				      <
-Hand 1:							      <
---------						      <
-Ah Kc 5h 4h 3h 2h 					      <
- - Flush in suit h					      <
- - Straight flush at index 0				      <
- - The most of a kind is 1 of a kind (at index 0 / value A)   <
- - No secondary pair					      <
- - evaluate_hand's ranking: STRAIGHT_FLUSH		      <
- - 5 cards used for hand: 5h 4h 3h 2h Ah 		      <
-Hand 2:							      <
---------						      <
-Ac 6c 5c 4c 3c 2c 					      <
- - Flush in suit c					      <
- - Straight flush at index 0				      <
- - Straight flush at index 1				      <
- - The most of a kind is 1 of a kind (at index 0 / value A)   <
- - No secondary pair					      <
- - evaluate_hand's ranking: STRAIGHT_FLUSH		      <
- - 5 cards used for hand: 5c 4c 3c 2c Ac 		      <
-Comparison : 						      <
---------------						      <
-Tie							      <
-============================				      <
-Hand 1:							      <
---------						      <
-As Ks Qs Js 0s 						      <
- - Flush in suit s					      <
- - Straight flush at index 0				      <
- - The most of a kind is 1 of a kind (at index 0 / value A)   <
- - No secondary pair					      <
- - evaluate_hand's ranking: STRAIGHT_FLUSH		      <
- - 5 cards used for hand: As Ks Qs Js 0s 		      <
-Hand 2:							      <
---------						      <
-As 5s 4s 3s 2s 						      <
- - Flush in suit s					      <
- - Straight flush at index 0				      <
- - The most of a kind is 1 of a kind (at index 0 / value A)   <
- - No secondary pair					      <
- - evaluate_hand's ranking: STRAIGHT_FLUSH		      <
- - 5 cards used for hand: 5s 4s 3s 2s As 		      <
-Comparison : 						      <
---------------						      <
-Hand 1 wins!						      <
-============================				      <
+Your file matched the expected output
+ - Testcase passed
 Testcase 10: Trying each type of hand ranking
  Checking the output 
 Your file matched the expected output
  - Testcase passed
 
-Overall Grade: B
+Overall Grade: A
