@@ -43,7 +43,17 @@ deck_t make_hand(card_t * cards, size_t n_cards) {
 }
 
 bool test_is_straight_at() {
+  // Cases to add:
+  //  Ace low
+  //  As 5h 4c 3d 2s
+  //  More than 5 cards
+  //  As Kh 5h 4c 3d 2s
+  //  Starting at different positions
+  //  Straight but not flush
+  //  Duplicate values
   printf("Testing is_straight_at\n");
+  // Kh Qh Jh 0h 9h 8h 7h
+  // Js 0s 8s 7d 6s 5c 4c
   card_t cards[5];
   cards[0] = card_from_letters('K','h');
   cards[1] = card_from_letters('Q','h');

@@ -1,0 +1,80 @@
+Hand 1:
+--------
+0h 9s 8d 7d 6h 5c 4c 
+ - No flush
+is_straight_at: 0h 9s 8d 7d 6h 5c 4c  index=0, suit=4
+is_n_length_straight_at(0h 9s 8d 7d 6h 5c 4c , index=0, fs=4, n=5
+hand->cards[0]->value=10, last_value=11
+num_in_a_row=1
+hand->cards[1]->value=9, last_value=10
+num_in_a_row=2
+hand->cards[2]->value=8, last_value=9
+num_in_a_row=3
+hand->cards[3]->value=7, last_value=8
+num_in_a_row=4
+hand->cards[4]->value=6, last_value=7
+num_in_a_row=5
+1: returning 1 from is_n_length_straight_at
+2: returning 1 from is_straight_at
+ - Straight at index 0
+is_straight_at: 0h 9s 8d 7d 6h 5c 4c  index=1, suit=4
+is_n_length_straight_at(0h 9s 8d 7d 6h 5c 4c , index=1, fs=4, n=5
+hand->cards[1]->value=9, last_value=10
+num_in_a_row=1
+hand->cards[2]->value=8, last_value=9
+num_in_a_row=2
+hand->cards[3]->value=7, last_value=8
+num_in_a_row=3
+hand->cards[4]->value=6, last_value=7
+num_in_a_row=4
+hand->cards[5]->value=5, last_value=6
+num_in_a_row=5
+1: returning 1 from is_n_length_straight_at
+2: returning 1 from is_straight_at
+ - Straight at index 1
+is_straight_at: 0h 9s 8d 7d 6h 5c 4c  index=2, suit=4
+is_n_length_straight_at(0h 9s 8d 7d 6h 5c 4c , index=2, fs=4, n=5
+hand->cards[2]->value=8, last_value=9
+num_in_a_row=1
+hand->cards[3]->value=7, last_value=8
+num_in_a_row=2
+hand->cards[4]->value=6, last_value=7
+num_in_a_row=3
+hand->cards[5]->value=5, last_value=6
+num_in_a_row=4
+hand->cards[6]->value=4, last_value=5
+num_in_a_row=5
+1: returning 1 from is_n_length_straight_at
+2: returning 1 from is_straight_at
+ - Straight at index 2
+ - The most of a kind is 1 of a kind (at index 0 / value 0)
+ - No secondary pair
+is_straight_at: 0h 9s 8d 7d 6h 5c 4c  index=0, suit=4
+is_n_length_straight_at(0h 9s 8d 7d 6h 5c 4c , index=0, fs=4, n=5
+hand->cards[0]->value=10, last_value=11
+num_in_a_row=1
+hand->cards[1]->value=9, last_value=10
+num_in_a_row=2
+hand->cards[2]->value=8, last_value=9
+num_in_a_row=3
+hand->cards[3]->value=7, last_value=8
+num_in_a_row=4
+hand->cards[4]->value=6, last_value=7
+num_in_a_row=5
+1: returning 1 from is_n_length_straight_at
+2: returning 1 from is_straight_at
+ - evaluate_hand's ranking: STRAIGHT
+ - 5 cards used for hand: 0h 9s 8d 7d 6h 
+Hand 2:
+--------
+As Jh 0d 9c 8d 7h 2h 
+ - No flush
+is_straight_at: As Jh 0d 9c 8d 7h 2h  index=0, suit=4
+is_n_length_straight_at(As Jh 0d 9c 8d 7h 2h , index=0, fs=4, n=5
+hand->cards[0]->value=14, last_value=15
+num_in_a_row=1
+hand->cards[1]->value=11, last_value=14
+2: returning 0 from is_n_length_straight_at
+========================================
+Testing for possible ace low straight...
+=========================

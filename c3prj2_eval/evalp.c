@@ -89,17 +89,24 @@ ssize_t  find_secondary_pair(deck_t * hand,
 // n is the number of cards to check (for ace low, we check
 // for an ace and 4 in a row starting with a 5).
 int is_n_length_straight_at(deck_t * hand, size_t index, suit_t fs, int n) {
+  printf("is_n_length_straight_at(");
+  print_hand(hand);
+  printf(", index=%ld, fs=%d, n=%d\n", index, fs, n);
   int num_in_a_row = 0;
   unsigned last_value = hand->cards[index]->value+1;
   for(int i=index; i<hand->n_cards; i++) {
     if(fs == NUM_SUITS) {
+      printf("hand->cards[%d]->value=%d, last_value=%d\n", i, hand->cards[i]->value, last_value);
       if(hand->cards[i]->value != last_value) {
 	if (hand->cards[i]->value == last_value-1) {
 	  num_in_a_row++;
+	  printf("num_in_a_row=%d\n", num_in_a_row);
 	  if (num_in_a_row >= n) {
+	    printf("1: returning 1 from is_n_length_straight_at\n");
 	    return 1;
 	  }
 	} else {
+	  printf("2: returning 0 from is_n_length_straight_at\n");
 	  return 0;
 	}
 	last_value = hand->cards[i]->value;
@@ -108,19 +115,25 @@ int is_n_length_straight_at(deck_t * hand, size_t index, suit_t fs, int n) {
       if (hand->cards[i]->value == last_value-1) {
 	num_in_a_row++;
 	if (num_in_a_row >= n) {
+	    printf("3: returning 1 from is_n_length_straight_at\n");
 	    return 1;
 	}
       } else {
+	printf("4: returning 0 from is_n_length_straight_at\n");
 	return 0;
       }
       last_value = hand->cards[i]->value;
     }
   }
+  printf("5: returning 0 from is_n_length_straight_at\n");
   return 0;
 }
 
 // assumes at least 4 cards in hand starting at index
 int is_ace_low_straight_at(deck_t * hand, size_t index, suit_t fs, int n) {
+  printf("is_ace_low_straight_at: hand=");
+  print_hand(hand);
+  printf(", index=%ld, fs=%d, n=%d\n", index, fs, n);
   assert(hand->cards[index]->value == VALUE_ACE &&
 	 (fs == NUM_SUITS || hand->cards[index]->suit == fs));
   int i = index+1;
@@ -128,12 +141,16 @@ int is_ace_low_straight_at(deck_t * hand, size_t index, suit_t fs, int n) {
 	!(fs==NUM_SUITS || hand->cards[i]->suit ==fs)){
     i++;
     if (i > hand->n_cards - 4) {
+      printf("1: returning 0 from is_ace_low_straight_at\n");
       return 0;
     }
   }
+  printf("i=%d\n", i);
   if (is_n_length_straight_at(hand, i, fs, 4)) {
+    printf("2: returning -1 from is_ace_low_straight_at\n");
     return -1;
   }
+  printf("3: returning 0 from is_ace_low_straight_at\n");
   return 0;
 }
 
@@ -141,22 +158,39 @@ int is_ace_low_straight_at(deck_t * hand, size_t index, suit_t fs, int n) {
 // (and only at index) in the hand
 // Assumes cards will appear in descending order by value
 int is_straight_at(deck_t * hand, size_t index, suit_t fs) {
+  printf("is_straight_at: ");
+  print_hand(hand);
+  printf(" index=%ld, suit=%d\n", index, fs);
   if (hand->n_cards - index < 5) {
+    printf("1: returning 0 from is_straight_at\n");
     return 0;
   }
   if (is_n_length_straight_at(hand, index, fs, 5) == 1) {
+    printf("2: returning 1 from is_straight_at\n");
     return 1;
   }
+  printf("========================================\n");
+  printf("Testing for possible ace low straight...\n");
+  printf("========================================\n");
+  printf("hand->cards[0]->value = %d, hand->cards[%ld]->value = %d\n",
+	 hand->cards[0]->value, index, hand->cards[index]->value);
   int possible_index = -1;
   for(int i=index; hand->cards[i]->value == VALUE_ACE && i < hand->n_cards - 4; i++) {
+    printf("i=%d ", i);
     if (fs == NUM_SUITS || hand->cards[i]->suit == fs) {
       possible_index = i;
       break;
     }
   }
+  printf("\npossible_index=%d\n", possible_index);
   if (possible_index >= 0) {
-    return is_ace_low_straight_at(hand, possible_index, fs, 4);
+    int low = is_ace_low_straight_at(hand, possible_index, fs, 4);
+    printf("3: returning %d from is_straight_at\n", low);
+    printf("========================================\n");
+    return low;
+    //    return is_ace_low_straight_at(hand, index, fs, 4);
   }
+  printf("4: returning 0 from is_straight_at\n");
   return 0;
 }
 
@@ -165,6 +199,14 @@ hand_eval_t build_hand_from_match(deck_t * hand,
 				  unsigned n,
 				  hand_ranking_t what,
 				  size_t idx) {
+  /*
+  printf("Entering build_hand_from_match...\n");
+  printf("hand=");
+  print_hand(hand);
+  printf(", n=%d", n);
+  printf(", what=%s", ranking_to_string(what));
+  printf(", idx=%ld\n", idx);
+  */
   hand_eval_t ans;
   ans.ranking = what;
   // Copy "n" cards from the hand, starting at "idx"
