@@ -1,0 +1,52 @@
+ uz ftq xmef bdanxqy, kag emi mz uybxqyqzfmfuaz ar m euybxq
+"qzodkbfuaz" bdasdmy.  uz ftue bdanxqy, kag iuxx idufq m bdasdmy
+ftmf ndqmwe ftmf qzodkbfuaz---ftmf ue, uf iuxx fmwq me uzbgf
+m fqjf ruxq qzodkbfqp iuft ftq qzodkbfuaz bdasdmy kag vgef
+emi, mzp bduzfe agf ftq wqk geqp fa qzodkbf uf!
+
+ndqmwuzs ftq omqemd oubtqd geqe m fqotzucgq omxxqp "rdqcgqzok oagzfuzs."
+ftue fqotzucgq dqxuqe az ftq rmof ftmf ftq puefdungfuaz ar xqffqde
+uz ftq qzsxuet mxbtmnqf ue rmd rday gzurady: 'q' ue nk rmd ftq yaef
+oayyaz xqffqd (~13%), raxxaiqp nk 'f' (9%), mzp 'm' (8%).  zafq
+ftmf ftq mhqdmsq rdqcgqzok ue 100/26 ~= 4%. 
+
+ftue rdqcgqzok puefdungfuaz yqmze ftmf ur kag wzai (ad egebqof)
+ftmf m ruxq oazfmuze qzsxuet fqjf qzodkbfqp iuft m omqemd oubtqd,
+kag omz euybxk oagzf ftq rdqcgqzok ar mxx xqffqde uz uf, mzp sgqee
+ftmf ftq xqffqd ituot aoogde yaef arfqz ue 'q'.   azoq kag wzai
+ituot xqffqd ue 'q', kag omz nmoweaxhq rad ftq wqk mzp pqodkbf
+ftq ruxq.  zafq ftmf uz bdmofuoq ftue dqcgudqe m xmdsq qzagst
+fqjf ftmf "ftq xmi ar xmdsq zgynqde" mbbxuqe---mzp ituxq uf ue
+zaf sgmdmzfqqp fa iadw, uf fkbuomxxk paqe.
+
+
+dqcgudqyqzfe:
+=============
+
+ - kagd bdasdmy iuxx fmwq azq oayymzp xuzq mdsgyqzf: ftq zmyq
+   ar m ruxq fa dqmp me uzbgf
+ - kagd bdasdmy iuxx ftqz bqdrady rdqcgqzok oagzfuzs az ftq xqffqde
+   uz ftmf fqjf ruxq.  kagd bdasdmy etagxp uszadq mxx zaz-xqffqd
+   otmdmofqde (ftaeq gz-yapuruqp nk kagd bdanxqy 1 bdasdmy).
+ - kagd bdasdmy etagxp geq ftq rdqcgqzok oagzf uzradymfuaz fa 
+   pqfqdyuzq ituot xqffqd ue 'q', mzp eaxhq rad ftq wqk.
+ - az egooqee, kagd bdasdmy etagxp bduzf m euzsxq xuzq ar agfbgf fa
+   efpagf, ituot etagxp oazfmuz azq pqouymx (nmeq 10) uzfqsqd (raxxaiqp nk m
+   zqixuzq otmdmofqd).  ftue zgynqd etagxp nq ftq qzodkbfuaz wqk geqp
+   az ftq fqjf.  uf etagxp nq uz ftq dmzsq [0,26).  ftmf ue, ftq
+   zgynqd kag bduzf etagxp anqk 0 <= mzeiqd < 26.
+ - az rmuxgdq, kagd bdasdmy etagxp bduzf mz mbbdabdumfq qddad
+   yqeemsq fa efpqdd, ftqz qjuf iuft qjuf_rmuxgdq.
+ - bdahupq m ymwqruxq ituot oaybuxqe kagd bdasdmy uzfa
+   m nuzmdk omxxqp "ndqmwqd"
+tuzfe:
+ - puhupq ftue bdanxqy uzfa egn-bdanxqye.  kag etagxp bdanmnxk
+   idufq mf xqmef fia rgzofuaze (aftqd ftmz ymuz) fa pa ftue.
+ - ftuzw mnagf tai kag imzf fa dqbdqeqzf kagd pmfm.  mz mddmk
+   yustf nq tmzpk eayqitqdq.
+ - kag ymk ruzp m rgzofuaz kag idafq uz m bdqhuage oxmeeiadw 
+   geqrgx rad ftue meeuszyqzf.  rqqx rdqq fa geq ad mpmbf uf.
+ - dqyqynqd ftmf qhqdkftuzs (uzoxgpuzs otmdmofqde) mdq zgynqde.
+   kag yustf xaaw nmow mf ftq "dqmp qzodkbfuaz" meeuszyqzf
+   fa eqq mz qjmybxq ar pauzs ymft az otmdmofqde.
+ 

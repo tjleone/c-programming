@@ -11,7 +11,7 @@ int max_to_key(int max);
 
 int main(int argc, char* argv[]) {
   if(argc != 2) {
-    printf("Usage: %s <filename>\n", argv[0]);
+    fprintf(stderr, "Usage: %s <filename>\n", argv[0]);
     return EXIT_FAILURE;
   }
   FILE * fptr = fopen(argv[1], "r");
@@ -23,10 +23,10 @@ int main(int argc, char* argv[]) {
   int key = break_it(fptr);
 
   if(!feof(fptr)) {
-    printf("Didn't reach end of file\n");
+    fprintf(stderr, "Didn't reach end of file\n");
     return EXIT_FAILURE;
   } else if(ferror(fptr)) {
-    printf("Error reading input\n");
+    fprintf(stderr, "Error reading input\n");
     return EXIT_FAILURE;
   }
   if (fclose(fptr) != 0) {
@@ -51,9 +51,9 @@ int index_of_max(int values[], int nvalues) {
 }
 
 int max_to_key(int max) {
-  int key = 0;
-  while((key + max) % 26 != INDEX_OF_E) {
-    key++;
+  int key = max - INDEX_OF_E;
+  if (key < 0) {
+    key += 26;
   }
   return key;
 }
