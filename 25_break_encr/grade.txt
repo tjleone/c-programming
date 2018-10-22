@@ -1,16 +1,16 @@
-Grading at Mon Oct 22 14:16:44 UTC 2018
+Grading at Mon Oct 22 14:46:01 UTC 2018
 Attempting to compile breaker.c 
-make: 'breaker' is up to date.
-Usage: ./breaker <filename>
-testcase1 failed, your program didn't indicate this is a failure case
+gcc -pedantic -std=gnu99 -ggdb3 -Wall -Werror -Wwrite-strings -c breaker.c
+gcc -pedantic -std=gnu99 -ggdb3 -Wall -Werror -Wwrite-strings -o breaker breaker.o
+testcase1 passed
 #################################################
 testcase2:
 testcase2 passed
 #################################################
 testcase3:
-testcase3 failed
+testcase3 passed
 #################################################
 testcase4:
-testcase4 failed
+testcase4 passed
 
-Overall Grade: F
+Overall Grade: A
