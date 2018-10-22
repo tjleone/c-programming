@@ -3,10 +3,11 @@
 #include <string.h>
 #include <ctype.h>
 
-#define LINE_SIZE 5
+#define INDEX_OF_E 4
 
 int break_it(FILE* fptr);
 int index_of_max(int values[], int nvalues);
+int max_to_key(int max);
 
 int main(int argc, char* argv[]) {
   if(argc != 2) {
@@ -49,6 +50,14 @@ int index_of_max(int values[], int nvalues) {
   return index_of_max;
 }
 
+int max_to_key(int max) {
+  int key = 0;
+  while((key + max) % 26 != INDEX_OF_E) {
+    key++;
+  }
+  return key;
+}
+
 int break_it(FILE* fptr) {
   int c;
   int frequencies[26] = {0};
@@ -59,5 +68,6 @@ int break_it(FILE* fptr) {
       frequencies[c] += 1;
     }
   }
-  return index_of_max(frequencies, 26);
+  int max = index_of_max(frequencies, 26);
+  return max_to_key(max);
 }
