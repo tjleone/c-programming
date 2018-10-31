@@ -10,16 +10,22 @@ int main(void) {
   size_t sz =0;
   long * array = NULL;
   size_t n = 0;
+  printf("entering while loop\n");
   while(getline(&line, &sz, stdin) > 0){
     n++;
+    printf("calling realloc\n");
     array=realloc(array, n * sizeof(*array));
+    printf("setting array[%ld]\n", n-1);
     array[n-1] = strtol(line, NULL, 0);
   }
+  printf("freeing line\n");
   free(line);
-  qsort((void*)array, n, sizeof(*array), cmplong); // (1) should be qsort((void*)array, n, sizeof(*array), cmplong);
+  printf("calling qsort\n");
+  qsort(&array, n, sizeof(*array), cmplong); // should be qsort((void*)array, n, sizeof(*array), cmplong);
+  printf("entering for loop\n");
   for (size_t i = 0; i < n; i++) {
-    printf("%ld\n", array[i]); // (2) should just free(array) after loop
+    printf("%ld\n", array[i]);
+    free(&array[i]);
   }
-  free(array);
   return EXIT_SUCCESS;
 }

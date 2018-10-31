@@ -1,0 +1,24 @@
+/*
+ * the initialization problem was picked up by the compiler as shown below:
+ *
+gcc -ggdb3 -Wall -Werror -std=gnu99 -pedantic -o uninit uninit.c
+uninit.c: In function ‘f’:
+uninit.c:6:7: error: ‘y’ is used uninitialized in this function [-Werror=uninitialized]
+   int z = x + y;
+       ^
+cc1: all warnings being treated as errors
+Makefile:3: recipe for target 'uninit' failed
+make: *** [uninit] Error 1
+*/
+#include <stdio.h>
+#include <stdlib.h>
+
+void f(int x) {
+  int y;
+  int z = x + y;
+  printf("%d\n", z);
+}
+
+int main(void) {
+  f(4);
+}

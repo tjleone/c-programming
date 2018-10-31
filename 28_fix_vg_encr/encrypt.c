@@ -4,8 +4,8 @@
 #include <string.h>
 
 void encrypt(FILE * f, int key, FILE * outfile){
-  char * line;
-  size_t sz;
+  char * line = NULL;
+  size_t sz = 0;
   while (getline(&line,&sz, f) >= 0) {
     char * ptr = line;
     while (*ptr != '\0') {
@@ -22,6 +22,7 @@ void encrypt(FILE * f, int key, FILE * outfile){
     }
     fprintf(outfile, "%s", line);
   }
+  free(line);
 }
 
 int main(int argc, char ** argv) {
@@ -40,7 +41,7 @@ int main(int argc, char ** argv) {
     return EXIT_FAILURE;
   }
   //outfileNAme is argv[2] + ".txt", so add 4 to its length.
-  char * outFileName = malloc((strlen(argv[2]) + 4) * sizeof(*outFileName));
+  char * outFileName = malloc((strlen(argv[2]) + 5) * sizeof(*outFileName));
   strcpy(outFileName, argv[2]);
   strcat(outFileName, ".enc");
   FILE * outFile = fopen(outFileName, "w");
@@ -53,6 +54,6 @@ int main(int argc, char ** argv) {
     perror("Failed to close the input file!");
     return EXIT_FAILURE;
   }
-
+  free(outFileName);
   return EXIT_SUCCESS;
 }

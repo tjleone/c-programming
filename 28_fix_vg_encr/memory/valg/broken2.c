@@ -16,10 +16,10 @@ int main(void) {
     array[n-1] = strtol(line, NULL, 0);
   }
   free(line);
-  qsort((void*)array, n, sizeof(*array), cmplong); // (1) should be qsort((void*)array, n, sizeof(*array), cmplong);
+  qsort(&array, n, sizeof(*array), cmplong); // (1) should be qsort((void*)array, n, sizeof(*array), cmplong);
   for (size_t i = 0; i < n; i++) {
     printf("%ld\n", array[i]); // (2) should just free(array) after loop
+    free(&array[i]);
   }
-  free(array);
   return EXIT_SUCCESS;
 }
