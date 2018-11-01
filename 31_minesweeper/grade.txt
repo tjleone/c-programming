@@ -1,0 +1,16 @@
+Grading at Thu Nov  1 18:06:02 UTC 2018
+Attempting to compile minesweeper.c
+#################################################
+testcase1:
+Your output is incorrect
+#################################################
+testcase2:
+Your output is incorrect
+#################################################
+testcase3:
+Your output is incorrect
+#################################################
+testcase4:
+Your output is incorrect
+
+Overall Grade: F
