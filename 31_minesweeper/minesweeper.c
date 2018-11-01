@@ -1,5 +1,6 @@
 // can be tested from the command line like this:
-//   $ printf "%d\n%d\n%d\n%d\n%s\n" 0 0 1 1 "no" | ./minesweeper 3 3 1
+// $ printf "%d\n%d\n%s\n%d\n%d\n%d\n%d\n%s" 0 0 "yes" 2 2 0 0 "no" | ./minesweeper 1 1 1
+// $ printf "%d\n%d\n%s\n%d\n%d\n%s" 7 7 "yes" 9 0 "no" | ./minesweeper 10 10 100
 //
 #include <stdio.h>
 #include <stdlib.h>
@@ -44,7 +45,6 @@ void addRandomMine(board_t * b) {
 }
 
 board_t * makeBoard(int w, int h, int numMines) {
-  assert(numMines < w*h);
   board_t * b = malloc(sizeof(*b));
   b->width = w;
   b->height = h;
