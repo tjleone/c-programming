@@ -1,3 +1,6 @@
+// can be tested from the command line like this:
+//   $ printf "%d\n%d\n%d\n%d\n%s\n" 0 0 1 1 "no" | ./minesweeper 3 3 1
+//
 #include <stdio.h>
 #include <stdlib.h>
 #include <assert.h>
@@ -112,24 +115,27 @@ void printBoard(board_t * b) {
   }
   printf("\nFound %d of %d mines\n", found, b->totalMines);
 }
+
 int countMines(board_t * b, int x, int y) {
   assert(x >= 0 && x < b->width);
   assert(y >= 0 && y < b->height);
   int nMines = 0;
-  int xStart = x == 0 ? x : x-1;
-  int xEnd = x == b->width-1 ? x : x+1;
-  int yStart = y == 0 ? y : y-1;
-  int yEnd = y == b->height-1 ? y : y+1;
-  for (int ny = yStart; ny <= yEnd; ny++) {
-    for (int nx = xStart; nx < xEnd; nx++) {
-      if (nx == x && ny == y) {
+  for (int dy = -1; dy <=1 ; dy++) {
+    for (int dx = -1; dx <=1 ; dx++) {
+      if (dx == 0 && dy == 0) {
 	continue;
       }
-      if (IS_MINE(b->board[ny][nx])) {
-	nMines++;
+      int nx = x + dx;
+      int ny = y + dy;
+      if (nx >= 0 && nx < b->width &&
+	  ny >= 0 && ny < b->height) {
+	if (IS_MINE(b->board[ny][nx])) {
+	    nMines++;
+	}
       }
     }
   }
+    
   return nMines;
 }
 int click (board_t * b, int x, int y) {
