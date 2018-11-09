@@ -1,0 +1,109 @@
+Grading at Fri Nov  9 23:02:45 UTC 2018
+Attempting to compile:
+rm -f  outname.o  counts.o  main.o  kv.o count_values *~
+gcc -c -Wall -Werror -std=gnu99 -pedantic -ggdb3 outname.c
+gcc -c -Wall -Werror -std=gnu99 -pedantic -ggdb3 counts.c
+gcc -c -Wall -Werror -std=gnu99 -pedantic -ggdb3 main.c
+gcc -c -Wall -Werror -std=gnu99 -pedantic -ggdb3 kv.c
+gcc -Wall -Werror -std=gnu99 -pedantic -ggdb3 -o count_values  outname.o  counts.o  main.o  kv.o
+#################################################
+testcase1:
+testcase1 passed, your program successfully indicated a failure
+  - Valgrind was clean (no errors, no memory leaks)
+valgrind was clean
+#################################################
+testcase2:
+red: 3
+green: 1
+<unknown> : 2
+blue: 1
+purple: 2
+yellow: 2
+green: 2
+yellow: 1
+red: 3
+<unknown> : 1
+blue: 1
+orange: 1
+brown: 1
+red: 3
+green: 1
+<unknown> : 2
+blue: 1
+purple: 2
+yellow: 2
+green: 2
+yellow: 1
+red: 3
+<unknown> : 1
+blue: 1
+orange: 1
+brown: 1
+Your file did not match the expected ouput
+Comparing file list1a.txt.counts with answer
+Your output is correct
+Comparing file list1b.txt.counts with answer
+Your file did not match the expected ouput
+Your output is incorrect
+#################################################
+testcase3:
+Commander: 1
+Lt. Commander: 1
+Lieutenant: 1
+Bartender: 1
+Ensign: 1
+Captain: 1
+<unknown> : 2
+Lt. Commander: 3
+Lieutenant: 1
+Commander: 1
+Lt. Commander: 2
+Captain: 1
+Lieutenant: 1
+Ensign: 1
+<unknown> : 3
+Commander: 1
+Lt. Commander: 1
+Lieutenant: 1
+Bartender: 1
+Ensign: 1
+Captain: 1
+<unknown> : 2
+Lt. Commander: 3
+Lieutenant: 1
+Commander: 1
+Lt. Commander: 2
+Captain: 1
+Lieutenant: 1
+Ensign: 1
+<unknown> : 3
+Your file did not match the expected ouput
+Comparing file list2a.txt.counts with answer
+Your output is correct
+Comparing file list2b.txt.counts with answer
+Your file did not match the expected ouput
+Your output is incorrect
+Comparing file list2c.txt.counts with answer
+Your file did not match the expected ouput
+Your output is incorrect
+#################################################
+testcase4:
+red: 1
+green: 2
+yellow="fruit"==============================crazylong!==++this is a test case I hope you will not fail it==========================================================running.....: 1
+orangecrazzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzy=null: 1
+youpass: 1
+<unknown> : 1
+red: 1
+green: 2
+yellow="fruit"==============================crazylong!==++this is a test case I hope you will not fail it==========================================================running.....: 1
+orangecrazzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzy=null: 1
+youpass: 1
+<unknown> : 1
+Your file did not match the expected ouput
+Comparing file list3a.txt.counts with answer
+Your output is correct
+  - Valgrind was clean (no errors, no memory leaks)
+valgrind was clean
+
+Overall Grade: D
