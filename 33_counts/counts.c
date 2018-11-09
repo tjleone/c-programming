@@ -43,13 +43,16 @@ void addCount(counts_t * c, const char * name) {
 }
 
 void printCounts(counts_t * c, FILE * outFile) {
+  int unknownIndex = -1;
   for(int i=0; i < c->nCounts; i++) {
     if(c->counts[i]->name == NULL) {
-      printf("<unknown> : ");
+      unknownIndex = i;
     } else {
-      printf("%s: ", c->counts[i]->name);
+      fprintf(outFile, "%s: %d\n", c->counts[i]->name, c->counts[i]->count);
     }
-    printf("%d\n", c->counts[i]->count);
+  }
+  if (unknownIndex != -1) {
+    fprintf(outFile, "<unknown> : %d\n", c->counts[unknownIndex]->count);
   }
 }
 
