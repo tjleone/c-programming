@@ -1,0 +1,25 @@
+Grading at Tue Nov 13 20:48:02 UTC 2018
+Compiling deck.c -> deck.o
+deck.c: In function ‘add_empty_card’:
+deck.c:31:25: error: implicit declaration of function ‘make_empty_card’ [-Werror=implicit-function-declaration]
+   card_t * empty_card = make_empty_card();
+                         ^
+deck.c:31:25: error: initialization makes pointer from integer without a cast [-Werror=int-conversion]
+deck.c: In function ‘build_remaining_deck’:
+deck.c:79:12: error: implicit declaration of function ‘is_empty_card’ [-Werror=implicit-function-declaration]
+       if (!is_empty_card(hands[i]->cards[j])) {
+            ^
+deck.c:86:3: error: implicit declaration of function ‘free_cards’ [-Werror=implicit-function-declaration]
+   free_cards(&temp);
+   ^
+deck.c: At top level:
+deck.c:91:6: error: conflicting types for ‘free_cards’ [-Werror]
+ void free_cards(deck_t * deck) {
+      ^
+deck.c:86:3: note: previous implicit declaration of ‘free_cards’ was here
+   free_cards(&temp);
+   ^
+cc1: all warnings being treated as errors
+Compilation of deck.c failed
+
+Overall Grade: F
