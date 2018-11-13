@@ -1,4 +1,6 @@
 #ifndef CARD_H
+#include <limits.h>
+#include <stdbool.h>
 #define CARD_H
 #define VALUE_ACE 14
 #define VALUE_KING 13
@@ -11,6 +13,9 @@ typedef enum {
   CLUBS,
   NUM_SUITS
 } suit_t;
+
+#define EMPTY_CARD_VALUE INT_MIN
+#define EMPTY_CARD_SUIT NUM_SUITS
 
 struct card_tag {
   unsigned value;
@@ -40,4 +45,7 @@ unsigned num_from_card_ptr(const card_t *c);
 int compare_cards_by_num(const void *c1vp, const void *c2vp);
 int compare_cards(const void *c1vp, const void *c2vp);
 void swap_cards(card_t *c1, card_t *c2);
+
+card_t * make_empty_card(void);
+bool is_empty_card(card_t * c);
 #endif

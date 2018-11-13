@@ -166,3 +166,17 @@ void swap_cards(card_t *c1, card_t *c2) {
   *c1 = *c2;
   *c2 = temp;
 }
+
+card_t * make_empty_card(void) {
+  card_t * empty_card = malloc(sizeof(*empty_card));
+  empty_card->value = EMPTY_CARD_VALUE;
+  empty_card->suit = EMPTY_CARD_SUIT;
+  return empty_card;
+}
+
+bool is_empty_card(card_t * c) {
+  if (c == NULL) {
+    return false;
+  }
+  return (c->value == EMPTY_CARD_VALUE) && (c->suit == EMPTY_CARD_SUIT);
+}
