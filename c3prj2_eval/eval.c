@@ -231,8 +231,39 @@ int compare_hands(deck_t * hand1, deck_t * hand2) {
 //     2  2  2  2  1  3  3  3
 //   because there are 2 kings, 2 queens,
 //   1 ten, and 3 nines.
+int get_match_count(unsigned * values, size_t nvalues, int ifrom) {
+  int i = ifrom + 1;
+  int count = 1;
+  while (i < nvalues && values[i] == values[ifrom]) {
+    count++; i++;
+  }
+  return count;
+}
+
 unsigned * get_match_counts(deck_t * hand) {
-  return NULL;
+  if (hand == NULL || hand->n_cards == 0) {
+    return NULL;
+  }
+  // the counts to be returned
+  unsigned * counts = malloc(hand->n_cards * sizeof(*counts));
+  
+  // a temporary array to make it easier to loop through values
+  unsigned * values = malloc(hand->n_cards * sizeof(*counts));
+  for (int i=0; i < hand->n_cards; i++) {
+    values[i] = hand->cards[i]->value;
+  }
+
+  int i = 0;
+  int count = 0;
+  while (i < hand->n_cards) {
+    count = get_match_count(values, hand->n_cards, i);
+    for (int j = 0; j < count; j++) {
+      counts[i+j] = count;
+    }
+    i += count;
+  }
+  free(values);
+  return counts;
 }
 
 // We provide the below functions.  You do NOT need to modify them
