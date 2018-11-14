@@ -14,8 +14,8 @@ typedef enum {
   NUM_SUITS
 } suit_t;
 
-#define EMPTY_CARD_VALUE INT_MIN
-#define EMPTY_CARD_SUIT NUM_SUITS
+#define EMPTY_CARD_VALUE 0
+#define EMPTY_CARD_SUIT 0
 
 struct card_tag {
   unsigned value;
