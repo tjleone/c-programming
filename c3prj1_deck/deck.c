@@ -4,7 +4,6 @@
 #include <assert.h>
 #include <limits.h>
 #include "deck.h"
-#include "eval.h"
 
 const int FULL_DECK_SIZE = 52;
 

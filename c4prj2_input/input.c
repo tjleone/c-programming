@@ -5,7 +5,6 @@
 #include <string.h>
 #include "cards.h"
 #include "deck.h"
-#include "eval.h"
 #include "future.h"
 #include "input.h"
 
