@@ -7,7 +7,6 @@
 #include "eval.h"
 #include "future.h"
 #include "input.h"
-#include "util.h"
 
   future_cards_t * add_future_cards_from_card_string(char * card_string, deck_t * hand, future_cards_t * fc) {
     printf("\nadd_future_cards_from_card_string\n\n");
