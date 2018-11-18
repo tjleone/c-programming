@@ -1,11 +1,9 @@
-Grading at Sun Nov 18 22:25:15 UTC 2018
+Grading at Sun Nov 18 22:39:03 UTC 2018
 Compiling cards.c -> cards.o
 Compiling deck.c -> deck.o
 Compiling input.c -> input.o
 Compiling future.c -> future.o
 Linking input.o, future.o deck.o, cards.o, and our tester
-input.o: In function `hand_from_string':
-input.c:(.text+0x202): undefined reference to `add_card_from_string_to'
 deck.o: In function `deck_contains':
 deck.c:(.text+0x444): undefined reference to `card_ptr_comp'
 deck.o: In function `sort_cards':
