@@ -1,0 +1,13 @@
+Grading at Sun Nov 18 22:15:55 UTC 2018
+Compiling cards.c -> cards.o
+Compiling deck.c -> deck.o
+Compiling input.c -> input.o
+input.c: In function ‘hand_from_string’:
+input.c:45:19: error: implicit declaration of function ‘make_empty_deck’ [-Werror=implicit-function-declaration]
+   deck_t * deck = make_empty_deck();
+                   ^
+input.c:45:19: error: initialization makes pointer from integer without a cast [-Werror=int-conversion]
+cc1: all warnings being treated as errors
+Compilation of input.c failed
+
+Overall Grade: F
