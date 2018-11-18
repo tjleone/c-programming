@@ -10,6 +10,6 @@ struct future_cards_tag {
 typedef struct future_cards_tag future_cards_t;
 void add_future_card(future_cards_t * fc, size_t index, card_t * ptr) ;
 void future_cards_from_deck(deck_t * deck, future_cards_t * fc);
-
+void free_future_cards(future_cards_t * fc);
 
 #endif 

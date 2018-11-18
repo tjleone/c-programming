@@ -1,0 +1,14 @@
+CFLAGS=-ggdb3 -Wall -Werror -pedantic -std=gnu99 -Wwrite-strings -fsanitize=address
+
+MY_OBJS=cards.o deck.o eval.o future.o  test.o
+
+test: $(MY_OBJS)
+	gcc -o test -no-pie -ggdb3 -fsanitize=address $(MY_OBJS) $(GIVEN_OBJS)
+
+.PHONY: run clean
+
+run:
+	./test
+
+clean:
+	rm test cards.o deck.o eval.o test.o *~
