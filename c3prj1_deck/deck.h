@@ -15,6 +15,7 @@ void assert_full_deck(deck_t * d) ;
 
 // added by TJ Leone
 void sort_cards(card_t ** array, size_t nelements);
+deck_t * make_empty_deck();
 
 //The below functions will be done in course 4.
 deck_t * make_deck_exclude(deck_t * excluded_cards);
