@@ -9,11 +9,11 @@ const char suit_letters[NUM_SUITS] = "shdc";
 const char value_letters[13] = "234567890JQKA";
 
 void assert_value_valid(unsigned value) {
-  assert((value >=2 && value <= VALUE_ACE) || value == EMPTY_CARD_VALUE);
+  assert(value >=2 && value <= VALUE_ACE);
 }
 
 void assert_suit_valid(suit_t suit) {
-  assert((suit >= SPADES && suit <= CLUBS) || suit == EMPTY_CARD_SUIT);
+  assert(suit >= SPADES && suit <= CLUBS);
 }
 
 void assert_value_letter_valid(char value_letter) {

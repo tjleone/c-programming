@@ -28,10 +28,10 @@ void add_card_to(deck_t * deck, card_t c) {
 //   for an unknown card.
 card_t * add_empty_card(deck_t * deck) {
   assert(deck != NULL);
-  card_t * empty_card = malloc(sizeof(*empty_card));
-  empty_card->value = INT_MIN;
-  empty_card->suit = NUM_SUITS;
-  return empty_card;
+  card_t * empty_card = make_empty_card();
+  add_card_to(deck, *empty_card);
+  free(empty_card); // add_card_to adds a copy of *empty_card, so we have to free empty_card
+  return deck->cards[deck->n_cards-1];
 }
 
 //   Create a deck that is full EXCEPT for all the cards
@@ -44,7 +44,18 @@ card_t * add_empty_card(deck_t * deck) {
 //   in Course 2 and int deck_contains(deck_t * d, card_t c)
 //   in Course 3!  They might be useful here.
 deck_t * make_deck_exclude(deck_t * excluded_cards) {
-  return NULL;
+  deck_t * answer = malloc(sizeof(*answer));
+  card_t card;
+  answer->cards = NULL;
+  answer->n_cards = 0;
+
+  for(int i=0; i < 52; i++) {
+    card = card_from_num(i);
+    if (!deck_contains(excluded_cards, card)) {
+      add_card_to(answer, card);
+    }
+  }
+  return answer;
 }
 
 //   This function takes an array of hands (remember
@@ -60,7 +71,29 @@ deck_t * make_deck_exclude(deck_t * excluded_cards) {
 //   (remember you just wrote add_card_to),
 //   and then pass it to make_deck_exclude.
 deck_t * build_remaining_deck(deck_t ** hands, size_t n_hands) {
-  return NULL;
+  deck_t temp;
+  temp.cards = NULL;
+  temp.n_cards = 0;
+  for (int i=0; i < n_hands; i++) {
+    for (int j=0; j < hands[i]->n_cards; j++) {
+      if (!is_empty_card(hands[i]->cards[j])) {
+	add_card_to(&temp, *hands[i]->cards[j]);
+      }
+    }
+  }
+
+  deck_t * answer = make_deck_exclude(&temp);
+  free_cards(&temp);
+  return answer;
+}
+
+void free_cards(deck_t * deck) {
+  for(int i=0; i < deck->n_cards; i++) {
+    free(deck->cards[i]);
+  }
+  free(deck->cards);
+  deck->n_cards = 0;
+  deck->cards = NULL;
 }
 
 //   Free the memory allocated to a deck of cards.
@@ -71,10 +104,7 @@ deck_t * build_remaining_deck(deck_t ** hands, size_t n_hands) {
 //   Once you have written it, add calls to free_deck anywhere you
 //   need to to avoid memory leaks.
 void free_deck(deck_t * deck) {
-  for(int i=0; i < deck->n_cards; i++) {
-    free(deck->cards[i]);
-  }
-  free(deck->cards);
+  free_cards(deck);
   free(deck);
 }
 
@@ -118,6 +148,13 @@ void assert_full_deck(deck_t * d) {
     bool is_card_in_deck = deck_contains(d, card_from_num(i));
     assert(is_card_in_deck);
   }
+}
+
+deck_t * make_empty_deck() {
+  deck_t * deck = malloc(sizeof(*deck));
+  deck->n_cards = 0;
+  deck->cards = NULL;
+  return deck;
 }
 
 void sort_cards(card_t ** array, size_t nelements) {
