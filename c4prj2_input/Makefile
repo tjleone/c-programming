@@ -1,6 +1,6 @@
 CFLAGS=-ggdb3 -Wall -Werror -pedantic -std=gnu99 -Wwrite-strings
 
-MY_OBJS=cards.o deck.o eval.o future.o input.o test.o
+MY_OBJS=cards.o deck.o future.o input.o test.o
 
 test: $(MY_OBJS)
 	gcc -o test -no-pie -ggdb3 $(MY_OBJS) $(GIVEN_OBJS)
@@ -11,4 +11,4 @@ run:
 	./test
 
 clean:
-	rm test cards.o deck.o eval.o future.o input.o test.o *~
+	rm test cards.o deck.o future.o input.o test.o *~
