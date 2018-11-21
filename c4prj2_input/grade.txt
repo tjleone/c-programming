@@ -1,4 +1,4 @@
-Grading at Sun Nov 18 23:01:38 UTC 2018
+Grading at Wed Nov 21 19:23:12 UTC 2018
 Compiling cards.c -> cards.o
 Compiling deck.c -> deck.o
 Compiling input.c -> input.o
@@ -7,151 +7,63 @@ Linking input.o, future.o deck.o, cards.o, and our tester
 Testing with input file with 
  o 1 hand
  o No unknown/future cards
-Line_1_did_not_match
-Line_2_did_not_match
-Line_3_did_not_match
-Line_4_did_not_match
-Line_5_did_not_match
-Line_6_did_not_match
-Line_7_did_not_match
-Your file did not match the expected ouput
-Test case failed
+Your file matched the expected output
+Test case passed
 Testing with input file with 
  o Many hands
  o No unknown/future cards
-Line_1_did_not_match
-Line_2_did_not_match
-Line_3_did_not_match
-Line_4_did_not_match
-Line_5_did_not_match
-Line_6_did_not_match
-Line_7_did_not_match
-Line_8_did_not_match
-Line_9_did_not_match
-Line_10_did_not_match
-Line_11_did_not_match
-Line_12_did_not_match
-Line_13_did_not_match
-Line_14_did_not_match
-Line_15_did_not_match
-Line_16_did_not_match
-Line_17_did_not_match
-Line_18_did_not_match
-Line_19_did_not_match
-Line_20_did_not_match
-Line_21_did_not_match
-Line_22_did_not_match
-Line_23_did_not_match
-Line_24_did_not_match
-Line_25_did_not_match
-Line_26_did_not_match
-Line_27_did_not_match
-Line_28_did_not_match
-Your file did not match the expected ouput
-Test case failed
+Your file matched the expected output
+Test case passed
 Testing with input file with 
  o Many hands
  o 1 unknown/future cards per hand
-Line_1_did_not_match
-Line_2_did_not_match
-Line_3_did_not_match
-Line_4_did_not_match
-Line_5_did_not_match
-Line_6_did_not_match
 Line_7_did_not_match
 Line_8_did_not_match
 Line_9_did_not_match
 Line_10_did_not_match
-Line_11_did_not_match
 Line_12_did_not_match
 Line_13_did_not_match
 Line_14_did_not_match
 Line_15_did_not_match
-Line_16_did_not_match
 Line_17_did_not_match
 Line_18_did_not_match
-Line_19_did_not_match
 Line_20_did_not_match
-Line_21_did_not_match
-Line_22_did_not_match
-Line_23_did_not_match
-Line_24_did_not_match
-Line_25_did_not_match
-Line_26_did_not_match
-Line_27_did_not_match
-Line_28_did_not_match
-Line_30_did_not_match
-Line_31_did_not_match
-Line_32_did_not_match
-Line_33_did_not_match
-Line_39_did_not_match
-Line_40_did_not_match
-Line_41_did_not_match
-Line_42_did_not_match
-Line_43_did_not_match
-Line_44_did_not_match
-Line_45_did_not_match
-Line_46_did_not_match
-Line_48_did_not_match
-Line_49_did_not_match
-Line_50_did_not_match
-Line_51_did_not_match
-Line_52_did_not_match
-Line_53_did_not_match
-Line_54_did_not_match
-Line_55_did_not_match
-Line_57_did_not_match
-Line_58_did_not_match
-Line_59_did_not_match
-Line_60_did_not_match
-Line_61_did_not_match
-Line_62_did_not_match
-Line_64_did_not_match
 Your file did not match the expected ouput
 Test case failed
 Testing with input file with 
  o Many hands
  o Many unknown/future cards per hand
-Line_1_did_not_match
-Line_2_did_not_match
-Line_3_did_not_match
-Line_4_did_not_match
-Line_5_did_not_match
-Line_6_did_not_match
-Line_7_did_not_match
-Line_8_did_not_match
 Line_9_did_not_match
 Line_10_did_not_match
 Line_11_did_not_match
 Line_12_did_not_match
 Line_13_did_not_match
 Line_14_did_not_match
-Line_15_did_not_match
 Line_16_did_not_match
 Line_17_did_not_match
 Line_18_did_not_match
 Line_19_did_not_match
 Line_20_did_not_match
 Line_21_did_not_match
-Line_22_did_not_match
 Line_23_did_not_match
 Line_24_did_not_match
 Line_25_did_not_match
 Line_26_did_not_match
 Line_27_did_not_match
 Line_28_did_not_match
-Line_29_did_not_match
 Line_30_did_not_match
 Line_31_did_not_match
 Line_32_did_not_match
 Line_33_did_not_match
 Line_34_did_not_match
 Line_35_did_not_match
-Line_36_did_not_match
 Line_37_did_not_match
 Line_38_did_not_match
 Line_39_did_not_match
+Line_40_did_not_match
+Line_41_did_not_match
+Line_42_did_not_match
 Your file did not match the expected ouput
 Test case failed
 
-Overall Grade: F
+Overall Grade: C
