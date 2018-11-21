@@ -63,7 +63,11 @@ void print_deck(deck_t * deck, int index) {
 void print_future_cards(future_cards_t * fc) {
   printf("\nFuture cards-------------------------\n");
   for (int i=0; i < fc->n_decks; i++) {
-    print_deck(&fc->decks[i], i);
+    printf("?%d ", i);
+  }
+  printf("\n");
+  for (int i=0; i < fc->n_decks; i++) {
+    printf("?%d: %ld\n", i, fc->decks[i].n_cards);
   }
   printf("\n-------------------------------------\n");
   printf("\n");
@@ -76,7 +80,6 @@ deck_t * deck_from_string(char * deck_str) {
   char * token = strtok(deck_str, delim);
 
   while (token != NULL) {
-    printf("Card string: %s\n", token);
     add_card_from_string_to(deck, token);
     token = strtok(NULL, delim);
   }
@@ -115,7 +118,17 @@ deck_t ** read_input(FILE * f, size_t * n_hands, future_cards_t * fc) {
     n_decks++;
     answer = realloc(answer, n_decks * sizeof(*answer));
     answer[n_decks-1] = hand_from_string(line, fc);
+    if (answer[n_decks-1] == NULL) {
+      for (int i = 0; i < n_decks-1; i++) {
+	free_deck(answer[i]);
+      }
+      free(answer);
+      free(line);
+      *n_hands = 0;
+      return NULL;
+    }
   }
+  free(line);
   *n_hands = n_decks;
   return answer;
 }
@@ -126,21 +139,39 @@ deck_t * hand_from_string(const char * str, future_cards_t * fc) {
   char * hand_str = strdup(str); // can't call strtok on a const char *
   const char delim[] = " \n";
   char * token = strtok(hand_str, delim);
+  int n_cards = 0;
 
   while (token != NULL) {
-    printf("Card string: %s\n", token);
-    assert(strlen(token) == 2);
+    assert(strlen(token) > 1);
     if (token[0] == '?') {
       // add empty card deck
       card_t * cptr = add_empty_card(deck);
+      // number following '?' might have more than one digit
+      size_t index = strtol(&token[1], NULL, 0);
       // add a pointer to the empty card to fc
-      size_t index = token[1] - '0';
       add_future_card(fc, index, cptr);
     } else {
       add_card_from_string_to(deck, token);
     }
+    n_cards++;
     token = strtok(NULL, delim);
   }
+
+  if(n_cards < 5) {
+    fprintf(stderr, "At least five cards per hand needed. %d cards found.\n", n_cards);
+    
+    for (int i=0; i < fc->n_decks; i++) {
+      if (fc->decks[i].n_cards > 0) {
+	free(fc->decks[i].cards);
+	fc->decks[i].cards = NULL;
+      }
+    }
+    free(fc->decks);
+    free_deck(deck);
+    free(hand_str);
+    return NULL;
+  }
+
   free(hand_str);
   return deck;
 }

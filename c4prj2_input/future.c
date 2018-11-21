@@ -55,34 +55,28 @@ void add_future_card(future_cards_t * fc, size_t index, card_t * ptr) {
    /* and so on. Think about a case where this function would need to */
    /* print an error message.  */
 void future_cards_from_deck(deck_t * deck, future_cards_t * fc) {
-  int d = 0;
   for(int i=0; i < fc->n_decks; i++) {
     if (fc->decks[i].n_cards > 0 && is_empty_card(fc->decks[i].cards[0])) {
+      card_t * c = deck->cards[i];
       for(int j=0; j < fc->decks[i].n_cards; j++) {
-	fc->decks[i].cards[j]->value = deck->cards[d]->value;
-	fc->decks[i].cards[j]->suit = deck->cards[d]->suit;
-	d++;
+	fc->decks[i].cards[j]->value = c->value;
+	fc->decks[i].cards[j]->suit = c->suit;
       }
     }
   }
-  for(int i=0; i < fc->n_decks; i++) {
-    if (fc->decks[i].n_cards > 0) {
-      printf("deck %d has %ld cards: ", i, fc->decks[i].n_cards);
-      print_card(*fc->decks[i].cards[0]);
-      printf("\n");
-    } else {
-      printf("deck %d has %ld cards\n", i, fc->decks[i].n_cards);
-    }
+}
+
+void free_decks(deck_t * decks, int n_decks) {
+  for (int i=0; i < n_decks; i++) {
+    free(decks[i].cards);
   }
+  //  free(decks);
 }
 
 // Free pointers to fc decks, and the **cards of each deck, but don't
 // free pointers from **cards[index] to cards. Those pointers will be
 // freed up when the hands are freed up.
 void free_future_cards(future_cards_t * fc) {
-  for (int i=0; i < fc->n_decks; i++) {
-    free(fc->decks[i].cards);
-  }
-  free(fc->decks);
+  free_decks(fc->decks, fc->n_decks);
   free(fc);
 }

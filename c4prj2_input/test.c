@@ -1,10 +1,27 @@
+/* TODO: Write up tests for */
+/*     deck_t ** read_input(FILE * f, size_t * n_hands, future_cards_t * fc) */
+/* */
+/* Common mistakes we have seen so far: */
+/* not handling ?nums that are more than one digit (?10, ?11) */
+/* not handling it properly if multiple draws are done for the hand */
+/* not handling it properly if we sort the hand." */
+/* */
+/* "Note that it is entirely possible to have an input like */
+/* Kh Qh As 4c 2c ?3 ?4 */
+/* Ac Qc As 4c 2c ?3 ?4" */
+/* "void future_cards_from_deck(deck_t * deck, future_cards_t * fc); */
+/* Think about a case where this function would need to print an error message" */
+/* "Note that most of the rest of the code assumes that a poker hand */
+/* has AT LEAST 5 cards in it. Your read_input function should enforce */
+/* this requirement. If there are fewer than 5 cards, print */
+/*   a useful error message and exit. */
+  
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
 #include <assert.h>
 #include "cards.h"
 #include "deck.h"
-#include "eval.h"
 #include "future.h"
 #include "input.h"
 
@@ -199,12 +216,91 @@ void test_future_cards_from_deck(void) {
   free_deck(deck2);
 }
 
-int main(void) {
+void free_memory(deck_t * deckptr, deck_t * known_cards, future_cards_t * fc, deck_t ** decks, int n_hands) {
+
+  printf("Calling free_deck\n");
+  free_deck(deckptr);
+  printf("...back from free_deck\n");
+
+  printf("Calling free_cards\n");
+  free_cards(known_cards);
+  printf("...back from free_cards\n");
+
+  //  printf("Calling free_future_cards\n");
+  // doesn't free up **cards[index] pointers, which are
+  // freed through the hands
+  // free_future_cards(fc);
+  // printf("...back from free_future_cards\n");
+
+  // Now free up the hands, which will free up the cards
+  // pointers
+  for (int i = 0; i < n_hands; i++) {
+    printf("Calling free_deck for deck %d\n", i);
+    free_deck(decks[i]);
+    printf("...back from free_future_cards\n");
+  }
+  free(decks);
+  for(int i=0; i < fc->n_decks; i++) {
+    free(fc->decks[i].cards);
+  }
+  free(fc->decks);
+}
+
+void test_read_input(FILE * f) {
+  future_cards_t unknown;
+  unknown.n_decks = 0;
+  unknown.decks = NULL;
+  size_t n_hands = 0;
+  printf("Calling read_input...\n");
+  deck_t ** decks = read_input(f, &n_hands, &unknown);
+  printf("...back from read_input with n_hands=%ld\n", n_hands);
+  if(decks == NULL) {
+    return;
+  }
+  future_cards_t * fc = &unknown;
+  deck_t known_cards;
+  known_cards.n_cards = 0;
+  known_cards.cards = NULL;
+  printf("Calling make_deck_exclude...\n");
+  deck_t * deckptr = make_deck_exclude(&known_cards);
+  printf("...back from make_deck_exclude\n");
+  printf("Calling shuffle...\n");
+  shuffle(deckptr);
+  printf("...back from shuffle\n");
+
+  printf("Calling print_future_cards with fc->n_decks=%ld\n", fc->n_decks);
+  print_future_cards(fc);
+  printf("...back from print_future_cards\n");
+  
+  printf("Calling future_cards_from_deck\n");
+  future_cards_from_deck(deckptr, fc);
+  printf("...back from future_cards_from_deck\n");
+
+  for(int i=0; i < n_hands; i++) {
+    printf("Calling print_hand\n");
+    print_hand(decks[i]);
+    printf("\n");
+    printf("...back from print_hand\n");
+  }
+  free_memory(deckptr, &known_cards, fc, decks, n_hands);
+}
+
+int main(int argc, char ** argv) {
+  if(argc != 2) {
+    fprintf(stderr, "Usage: %s <filename>\n", argv[0]);
+    return EXIT_FAILURE;
+  }
+  FILE * fptr = fopen(argv[1], "r");
+  if (fptr == NULL) {
+    perror("Failed to open the input file!");
+    return EXIT_FAILURE;
+  }
   //  test_add_future_card_test();
   //test_future_cards_from_deck();
   //test_deck_from_string();
   //test_hand_from_string();
-  test_future_cards_from_deck();
-  
+  //test_future_cards_from_deck();
+  test_read_input(fptr);
+  fclose(fptr);
   return EXIT_SUCCESS;
 }

@@ -1,0 +1,17 @@
+Testing with input file with
+  o 1 hand
+  o No unknown/future cards
+
+Testing with input file with
+  o Many hands
+  o No unknown/future cards
+
+Testing with input file with 
+ o Many hands
+ o 1 unknown/future cards per hand
+
+Testing with input file with 
+ o Many hands
+ o Many unknown/future cards per hand
+
+  
