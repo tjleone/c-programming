@@ -168,5 +168,44 @@ namespace {
     free(hands);
     free_deck(deck);
   }
-  
+
+  // Tests get_match_counts()
+
+  // Tests a hand with 8 sorted cards.
+  TEST(get_match_counts_test, Sorted) {
+    card_t card;
+    const char * hand1_strings[] = {"Ks", "Kh", "Qs", "Qh", "0s", "9d", "9d", "9h", NULL};
+    unsigned expected_counts[] = {2,  2,  2,  2,  1,  3,  3,  3};
+    deck_t * hand1 = (deck_t *)malloc(sizeof(*hand1));
+    hand1->cards = NULL;
+    hand1->n_cards = 0;
+    for(int i=0; hand1_strings[i] != NULL; i++) {
+      if (hand1_strings[i][0] == '?') {
+	add_empty_card(hand1);
+      } else {
+	printf("Adding valid card %s\n", hand1_strings[i]);
+	card = card_from_letters(hand1_strings[i][0], hand1_strings[i][1]);
+	printf("Added card with value %d, suit %d\n", card.value, card.suit);
+	add_card_to(hand1, card);
+      }
+      hand1->n_cards = i+1;
+    }
+    unsigned * counts = get_match_counts(hand1);
+    for (int i=0; i < hand1->n_cards; i++) {
+      EXPECT_EQ(counts[i], expected_counts[i]);
+    }
+    free_deck(hand1);
+  }
+
+  // Tests NULL input.
+  /*
+  TEST(get_match_counts_test, Null) {
+    deck_t temp;
+    temp.cards = NULL;
+    temp.n_cards = 0;
+    unsigned * counts = get_match_counts(&temp);
+    EXPECT_EQ(counts, NULL);
+    free_cards(&temp);
+  }
+  */  
 }  // namespace

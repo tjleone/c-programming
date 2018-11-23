@@ -3,19 +3,6 @@
 #include <stdlib.h>
 #include <assert.h>
 
-// compare function for sorting cards in descending order by rank and suit
-// e.g., 7c 0h Ac Jd Ah -> Ah Ac Jd 0h 7c (0h is 10 of hearts)
-int card_ptr_comp(const void * vp1, const void * vp2) {
-  const card_t * const *cp1 = vp1;
-  const card_t * const *cp2 = vp2;
-  const card_t * c1 = *cp1;
-  const card_t * c2 = *cp2;
-  if (c1->value != c2->value) {
-    return c2->value - c1->value;
-  }
-  return c2->suit - c1->suit;
-}
-
 // if hand contains at least 5 cards of one suit,
 // return the suit, else return NUM_SUITS
 // For example:

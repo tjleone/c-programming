@@ -1,14 +1,30 @@
-CFLAGS=-ggdb3 -Wall -Werror -pedantic -std=gnu99 -Wwrite-strings
+# Makefile for gtest examples
 
-MY_OBJS=cards.o deck.o eval.o test.o
+GOOGLE_TEST_LIB = gtest
+GOOGLE_TEST_INCLUDE = /usr/local/include
 
-test: $(MY_OBJS)
-	gcc -o test -no-pie -ggdb3  $(MY_OBJS) $(GIVEN_OBJS)
+G++ = g++
+G++_FLAGS = -c -Wall -I $(GOOGLE_TEST_INCLUDE)
+LD_FLAGS = -L /usr/local/lib -l $(GOOGLE_TEST_LIB) -l pthread
 
-.PHONY: run clean
+CC = gcc
+CFLAGS = -ggdb -Wall -Werror -pedantic
 
-run:
-	./test
+OBJECTS = poker_unittest.o cards.o deck.o eval.o gtest_main.o
+TARGET = poker
+
+all: $(TARGET)
+
+$(TARGET): $(OBJECTS)
+	    g++ -o $(TARGET) $(OBJECTS) $(LD_FLAGS)
+
+%.o : %.cpp
+	    $(G++) $(G++_FLAGS) $<
+
+%.o : %.c
+	    $(CC) $(G++_FLAGS) $(CFLAGS) $<
 
 clean:
-	rm test poker cards.o deck.o eval.o test.o *~
+	    rm -f $(TARGET) $(OBJECTS)
+
+PHONY: all clean

@@ -107,11 +107,15 @@ void free_deck(deck_t * deck) {
   free(deck);
 }
 
-void print_hand(deck_t * hand){
+void fprint_hand(FILE *f, deck_t * hand){
   for(int i=0; i<hand->n_cards; i++) {
-    print_card(hand->cards[i][0]);
-    printf(" ");
+    fprint_card(f, hand->cards[i][0]);
+    fprintf(f, " ");
   }
+}
+
+void print_hand(deck_t * hand){
+  fprint_hand(stdout, hand);
 }
 
 /*

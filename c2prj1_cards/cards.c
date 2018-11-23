@@ -63,7 +63,7 @@ const char * ranking_to_string(hand_ranking_t r) {
   case NOTHING:
     return "NOTHING";
   default:
-    printf("ranking_to_string: invalid hand ranking (%d)\n", r);  
+    fprintf(stderr, "ranking_to_string: invalid hand ranking (%d)\n", r);  
     exit(EXIT_FAILURE);
   }
 }
@@ -85,7 +85,7 @@ char value_letter(card_t c) {
   case VALUE_ACE:
     return 'A';
   default:
-    printf("value_letter: invalid value (%d)\n", c.value);
+    fprintf(stderr, "value_letter: invalid value (%d)\n", c.value);
     exit(EXIT_FAILURE);
   }
 }
@@ -94,15 +94,19 @@ char value_letter(card_t c) {
 char suit_letter(card_t c) {
   assert_suit_valid(c.suit);
   if (c.suit < 0 || c.suit >= NUM_SUITS) {
-    printf("suit_letter: invalid suit (%d)\n", c.suit);
+    fprintf(stderr, "suit_letter: invalid suit (%d)\n", c.suit);
     exit(EXIT_FAILURE);
   }
   return suit_letters[c.suit];
 }
 
-void print_card(card_t c) {
+void fprint_card(FILE * f, card_t c) {
   assert_card_valid(c);
-  printf("%c%c", value_letter(c), suit_letter(c));
+  fprintf(f, "%c%c", value_letter(c), suit_letter(c));
+}
+
+void print_card(card_t c) {
+  fprint_card(stdin, c);
 }
 
 unsigned value_from_letter(char value_let) {
@@ -122,7 +126,7 @@ unsigned value_from_letter(char value_let) {
     case 'J':
       return VALUE_JACK;
     default:
-      printf("value_from_letter: invalid card value (%c)", value_let);
+      fprintf(stderr, "value_from_letter: invalid card value (%c)", value_let);
       exit(EXIT_FAILURE);
     }
   }
@@ -140,7 +144,7 @@ suit_t suit_from_letter(char suit_let) {
   case 'c':
     return CLUBS;
   default:
-    printf("suit_from_letter: invalid card suit (%c)", suit_let);
+    fprintf(stderr, "suit_from_letter: invalid card suit (%c)", suit_let);
     exit(EXIT_FAILURE);
   }
 }

@@ -88,7 +88,7 @@ For this particular problem, you will need to:
 To start with this problem, you are going to want to define two structs, in the
 file kv.h.  The first one (struct _kvpair_t) should define the structure for
 one key/value pair.   The second should define the structure for an 
-array of key/value pairs (hint: you will want to include the lenght of the
+qarray of key/value pairs (hint: you will want to include the lenght of the
 array in this structure).
 
 Now you will want to write the four functions in kv.c.  
