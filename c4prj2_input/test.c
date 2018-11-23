@@ -288,15 +288,14 @@ void test_read_input(FILE * f, FILE * fout) {
     sort_cards(hand->cards, hand->n_cards);
   }
 
-  /*
   for(int i=0; i < n_hands; i++) {
-    printf("Calling print_hand\n");
-    print_hand(decks[i]);
-    printf("\n");
+    //    printf("Calling print_hand\n");
+    //    print_hand(decks[i]);
+    //    printf("\n");
     fprint_hand(fout, decks[i]);
     fprintf(fout,"\n");
-    printf("...back from print_hand\n");
-    }*/
+    //    printf("...back from print_hand\n");
+  }
   free_memory(deckptr, &known_cards, fc, decks, n_hands);
 }
 

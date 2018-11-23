@@ -106,7 +106,7 @@ void fprint_card(FILE * f, card_t c) {
 }
 
 void print_card(card_t c) {
-  fprint_card(stdin, c);
+  fprint_card(stdout, c);
 }
 
 unsigned value_from_letter(char value_let) {
