@@ -287,6 +287,7 @@ void test_read_input(FILE * f, FILE * fout) {
     deck_t *hand = decks[i];
     sort_cards(hand->cards, hand->n_cards);
   }
+  print_future_cards(fc);
 
   for(int i=0; i < n_hands; i++) {
     //    printf("Calling print_hand\n");

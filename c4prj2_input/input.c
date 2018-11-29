@@ -67,7 +67,16 @@ void print_future_cards(future_cards_t * fc) {
   }
   printf("\n");
   for (int i=0; i < fc->n_decks; i++) {
-    printf("?%d: %ld\n", i, fc->decks[i].n_cards);
+    printf("?%d: ", i);
+    if (fc->decks[i].n_cards > 0) {
+      print_card(*fc->decks[i].cards[0]);
+      for (int j=0; j<fc->decks[i].n_cards; j++) {
+	printf(" %p", (void *)fc->decks[i].cards[j]);
+      }
+      printf("\n");
+    } else {
+      printf("Not replaced.\n");
+    }
   }
   printf("\n-------------------------------------\n");
   printf("\n");

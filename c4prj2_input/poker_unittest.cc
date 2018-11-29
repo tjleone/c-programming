@@ -33,6 +33,7 @@
 extern "C" {
   #include "cards.h"
   #include "deck.h"
+  #include "eval.h"
   #include "future.h"
 }
 // Don't forget gtest.h, which declares the testing framework.
