@@ -1,6 +1,7 @@
 #ifndef CARD_H
 #include <limits.h>
 #include <stdbool.h>
+#include <stdio.h>
 #define CARD_H
 #define VALUE_ACE 14
 #define VALUE_KING 13
