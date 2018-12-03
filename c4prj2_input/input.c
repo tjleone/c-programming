@@ -166,7 +166,7 @@ deck_t * hand_from_string(const char * str, future_cards_t * fc) {
     token = strtok(NULL, delim);
   }
 
-  if(n_cards < 5) {
+  if(fc != NULL && n_cards < 5) { // fc set to NULL means we're reading draws, not hands
     fprintf(stderr, "At least five cards per hand needed. %d cards found.\n", n_cards);
     
     for (int i=0; i < fc->n_decks; i++) {

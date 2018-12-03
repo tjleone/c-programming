@@ -39,10 +39,10 @@ void test_read_input(FILE * hands_f, FILE * draws_f) {
   size_t sz = 0;
   while(getline(&hand_s, &sz, hands_f) != EOF) {
     printf("Draw %d\n", draw);
-    printf(hand_s);
+    printf(line);
     draw++;
   }
-  free(hand_s);
+  free(line);
 /*       Draw 0 */
 
 /*       Hand 0: 0c 5c 8d Kc Qs Ac Kd (sorted: Ac Kc Kd Qs 0c 8d 5c ) */

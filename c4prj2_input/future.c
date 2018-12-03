@@ -56,7 +56,8 @@ void add_future_card(future_cards_t * fc, size_t index, card_t * ptr) {
    /* print an error message.  */
 void future_cards_from_deck(deck_t * deck, future_cards_t * fc) {
   for(int i=0; i < fc->n_decks; i++) {
-    if (fc->decks[i].n_cards > 0 && is_empty_card(fc->decks[i].cards[0])) {
+    //    if (fc->decks[i].n_cards > 0 && is_empty_card(fc->decks[i].cards[0])) {
+    if (fc->decks[i].n_cards > 0) {
       card_t * c = deck->cards[i];
       for(int j=0; j < fc->decks[i].n_cards; j++) {
 	fc->decks[i].cards[j]->value = c->value;

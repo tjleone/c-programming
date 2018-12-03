@@ -195,6 +195,7 @@ namespace {
     for (int i=0; i < hand1->n_cards; i++) {
       EXPECT_EQ(counts[i], expected_counts[i]);
     }
+    free(counts);
     free_deck(hand1);
   }
 
@@ -281,6 +282,6 @@ namespace {
   }
   
   TEST(add_future_card_test, Full) {
-    //add_future_card_test_body();
+    add_future_card_test_body();
   }
 }  // namespace
