@@ -71,7 +71,7 @@ void free_decks(deck_t * decks, int n_decks) {
   for (int i=0; i < n_decks; i++) {
     free(decks[i].cards);
   }
-  //  free(decks);
+  free(decks);
 }
 
 // Free pointers to fc decks, and the **cards of each deck, but don't

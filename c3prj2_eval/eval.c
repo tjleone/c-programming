@@ -295,8 +295,12 @@ int find_straight(deck_t * hand, suit_t fs, hand_eval_t * ans) {
     int x = is_straight_at(hand, i, fs);
     if (x != 0){
       if (x < 0) { //ace low straight
-	assert(hand->cards[i]->value == VALUE_ACE &&
-	       (fs == NUM_SUITS || hand->cards[i]->suit == fs));
+	if (hand->cards[i]->value == VALUE_ACE &&
+	       (fs == NUM_SUITS || hand->cards[i]->suit == fs)) {
+	  return 0;
+	}
+	//	assert(hand->cards[i]->value == VALUE_ACE &&
+	//       (fs == NUM_SUITS || hand->cards[i]->suit == fs));
 	ans->cards[4] = hand->cards[i];
 	size_t cpind = i+1;
 	while(hand->cards[cpind]->value != 5 ||
