@@ -1,4 +1,5 @@
 #include "eval.h"
+#include <execinfo.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <assert.h>
@@ -78,11 +79,14 @@ ssize_t  find_secondary_pair(deck_t * hand,
 int is_n_length_straight_at(deck_t * hand, size_t index, suit_t fs, int n) {
   int num_in_a_row = 0;
   unsigned last_value = hand->cards[index]->value+1;
-
+  /*  
   if(fs != NUM_SUITS && hand->cards[index]->suit != fs) {
     return 0;
   }
-
+  */
+  if(index < hand->n_cards-1 && hand->cards[index]->value == hand->cards[index+1]->value) {
+    return 0;
+  }
   for(int i=index; i<hand->n_cards; i++) {
     if(fs == NUM_SUITS) {
       if(hand->cards[i]->value != last_value) {
@@ -253,6 +257,32 @@ unsigned * get_match_counts(deck_t * hand) {
   return counts;
 }
 
+void
+btrace(void)
+{
+  const int BT_BUF_SIZE = 256;
+  int j, nptrs;
+  void *buffer[BT_BUF_SIZE];
+  char **strings;
+
+  nptrs = backtrace(buffer, BT_BUF_SIZE);
+  printf("backtrace() returned %d addresses\n", nptrs);
+
+  /* The call backtrace_symbols_fd(buffer, nptrs, STDOUT_FILENO)
+     would produce similar output to the following: */
+
+  strings = backtrace_symbols(buffer, nptrs);
+  if (strings == NULL) {
+    perror("backtrace_symbols");
+    exit(EXIT_FAILURE);
+  }
+
+  for (j = 0; j < nptrs; j++)
+    printf("%s\n", strings[j]);
+
+  free(strings);
+}
+
 // We provide the below functions.  You do NOT need to modify them
 // In fact, you should not modify them!
 
@@ -263,6 +293,9 @@ unsigned * get_match_counts(deck_t * hand) {
 //if "fs" is NUM_SUITS, then suits are ignored.
 //if "fs" is any other value, a straight flush (of that suit) is copied.
 void copy_straight(card_t ** to, deck_t *from, size_t ind, suit_t fs, size_t count) {
+  if(!(fs == NUM_SUITS || from->cards[ind]->suit == fs)) {
+    btrace();
+  }
   assert(fs == NUM_SUITS || from->cards[ind]->suit == fs);
   unsigned nextv = from->cards[ind]->value;
   size_t to_ind = 0;
