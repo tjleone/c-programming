@@ -198,17 +198,18 @@ char * get_expected_answer(char * filename, expected_t * expected, const int n_f
 }
 
 int do_it(char * filename, FILE *f, size_t n_trials) {
-  const int n_filenames = 16;
-  expected_t * expected = make_expected(n_filenames);
-  char * expected_answer = get_expected_answer(filename, expected, n_filenames);
+  //  const int n_filenames = 16;
+  //  expected_t * expected = make_expected(n_filenames);
+  //  char * expected_answer = get_expected_answer(filename, expected, n_filenames);
   char * actual_answer = get_answer(f, n_trials);
 
   printf("%s", actual_answer);
-
+  /*
   free_expected(expected, n_filenames);
   if (expected_answer == NULL) {
     return EXIT_FAILURE;
   }
+  */
   if (actual_answer == NULL) {
     return EXIT_FAILURE;
   }
