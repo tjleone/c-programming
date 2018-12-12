@@ -136,6 +136,7 @@ char * get_answer(FILE *f, int n_trials) {
   }
   int result_str_len = 256;
   char * result_str = malloc(result_str_len*sizeof(*result_str));
+  result_str[0] = '\0'; // make sure this is seen as a zero length string by strlen
   int length = 0;
   for(size_t i=0; i<n_hands; i++) {
     if(strlen(result_str) + 80 > result_str_len) {
